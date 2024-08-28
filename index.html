@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TRIADA</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #0e1111; /* background */
+        }
+        header {
+            position: absolute;
+            top: 20px;
+            left: 30px;
+            right: 30px; /* Adjust for better spacing on smaller screens */
+            display: flex;
+            justify-content: space-between;
+            padding-right: 30px; /* Add space on the right */
+            box-sizing: border-box;
+            color: red;
+            font-family: 'Courier New', Courier, monospace;
+            border-bottom: 1px solid red; /* Line below header */
+        }
+        .logo-text {
+            font-size: 24px; /* Adjust font size for smaller screens */
+            font-weight: bold;
+        }
+        .nav-links {
+            display: flex;
+            gap: 15px; /* Reduce gap for smaller screens */
+            align-items: center;
+            font-size: 16px; /* Adjust font size for smaller screens */
+        }
+        .nav-links a {
+            color: red; /* Hyperlink color */
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+        }
+        .nav-links a:hover {
+            text-decoration: underline;
+        }
+        .nav-links img {
+            width: 60px; /* Set image width */
+            height: auto; /* Maintain aspect ratio */
+        }
+        .logo-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin-top: 20px; /* Space below the header */
+        }
+        .logo {
+            max-width: 30%; /* Ensure logo fits within smaller screens */
+            height: auto;
+        }
+        .social-icons {
+            margin-top: 8px; /* Space between logo and icons */
+            display: flex;
+            gap: 15px; /* Reduce gap for smaller screens */
+        }
+        .social-icons a {
+            color: white;
+            font-size: 20px; /* Adjust icon size for smaller screens */
+            text-decoration: none;
+        }
+        .social-icons a:hover {
+            color: red;
+        }
+        footer {
+            position: absolute;
+            bottom: 20px;
+            left: 30px;
+            right: 30px; /* Adjust for better spacing on smaller screens */
+            text-align: center;
+            color: white;
+            font-style: italic;
+            border-top: 1px solid red; /* Line above footer */
+            padding-top: 10px; /* Space above text */
+            box-sizing: border-box;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 14px; /* Adjust font size for smaller screens */
+        }
+
+        /* Media queries for responsiveness */
+        @media (max-width: 768px) {
+            .logo-text {
+                font-size: 20px; /* Further adjust font size for very small screens */
+            }
+            .nav-links {
+                flex-direction: column; /* Stack navigation links vertically */
+                gap: 10px; /* Reduce gap for very small screens */
+                font-size: 14px; /* Further adjust font size for very small screens */
+            }
+            .social-icons {
+                gap: 10px; /* Further reduce gap between icons */
+            }
+            .social-icons a {
+                font-size: 18px; /* Further adjust icon size */
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo-text">TRIADA</div>
+        <div class="nav-links">
+            <a href="team.html">Team</a>
+            <a href="achievements.html">Achievements</a>
+            <a href="https://ctftime.org/" target="_blank">
+                <img src="ctftimelogo.svg" alt="CTFtime Logo">
+            </a>
+        </div>
+    </header>
+    <div class="logo-container">
+        <img src="binary2.png" alt="Logo" class="logo">
+        <div class="social-icons">
+            <a href="https://github.com/Team-Triada" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+            <a href="https://www.linkedin.com/company/triada-sec/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+            <a href="mailto:triadactf@gmail.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a>
+        </div>
+    </div>
+    <footer>
+        Team Triada - Securing Your Digital Future
+    </footer>
+</body>
+</html>

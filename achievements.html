@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Achievements - TRIADA</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            margin: 0;
+            background-color: #0f0d0d; /* Background color */
+            color: white; /* White text color */
+            font-family: 'Courier New', Courier, monospace; /* Font style */
+        }
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 30px;
+            box-sizing: border-box;
+            color: red;
+            font-family: 'Courier New', Courier, monospace;
+            border-bottom: 1px solid red; /* Line below header */
+            background-color: #0f0d0d; /* Same background as body */
+            z-index: 1000; /* Ensure header stays above other content */
+        }
+        .logo-text {
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .nav-links {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+            font-size: 16px;
+        }
+        .nav-links a {
+            color: red; /* Hyperlink color */
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+        }
+        .nav-links a:hover {
+            text-decoration: underline;
+        }
+        .nav-links img {
+            width: 60px;
+            height: auto;
+        }
+        main {
+            padding: 100px 30px 70px; /* Adjust padding for header and footer */
+            max-width: 800px; /* Limit the width for better readability */
+            margin: 0 auto; /* Center content within the max-width */
+        }
+        h1 {
+            text-align: center; /* Center the heading */
+            font-family: 'VT323', monospace; /* Different font for heading */
+        }
+        footer {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            text-align: center;
+            color: white;
+            font-style: italic;
+            border-top: 1px solid red; /* Line above footer */
+            padding: 10px 30px;
+            box-sizing: border-box;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 14px;
+            background-color: #0f0d0d; /* Same background as body */
+        }
+        ul {
+            padding-left: 20px; /* Indent list */
+        }
+        li {
+            margin-bottom: 10px; /* Space between list items */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo-text">TRIADA</div>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="team.html">Team</a>
+            <a href="https://ctftime.org/" target="_blank">
+                <img src="ctftimelogo.svg" alt="CTFtime Logo">
+            </a>
+        </div>
+    </header>
+    <main>
+        <h1><b>Achievements</b></h1>
+        <ul>
+            <li><b>Ranked 62nd Among 4,996 CTF Teams in India</b></li>
+            <p>Our team has achieved an outstanding 62nd place out of nearly 5,000 CTF teams across India! This remarkable position underscores our exceptional skills and dedication in the realm of cybersecurity competitions.</p>
+
+             <li><b>Community Outreach - CTF Competitions</b></li>
+            <p>We conducted a series of CTF Competitions for students who are new to the field of Security. 
+            - Through these CTFs, participants not only gain hands-on experience but also cultivate a deeper understanding of cybersecurity concepts and techniques. </p>
+        </ul>
+    </main>
+    <footer>
+        Team Triada - Securing Your Digital Future
+    </footer>
+</body>
+</html>
