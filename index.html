@@ -15,20 +15,22 @@
             margin: 0;
             background-color: #0e1111; /* background */
         }
-        header {
-            position: absolute;
-            top: 20px;
-            left: 30px;
-            right: 30px; /* Adjust for better spacing on smaller screens */
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding-right: 30px; /* Add space on the right */
-            box-sizing: border-box;
-            color: red;
-            font-family: 'Courier New', Courier, monospace;
-            border-bottom: 1px solid red; /* Line below header */
-        }
+         header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 30px;
+    box-sizing: border-box;
+    color: red;
+    font-family: 'Courier New', Courier, monospace;
+    border-bottom: 1px solid red; /* Line below header */
+    background-color: #0f0d0d; /* Same background as body */
+    z-index: 1000; /* Ensure header stays above other content */
+}
         .logo-text {
             font-size: 24px; /* Adjust font size for smaller screens */
             font-weight: bold;
@@ -122,6 +124,7 @@
         <img src="images/triada_logo.png" alt="TRIADA Logo" class="logo-img">
     </div>
     <div class="nav-links">
+        <a href="index.html">Home</a>
         <a href="team.html">Team</a>
         <a href="achievements.html">Achievements</a>
         <a href="https://ctftime.org/" target="_blank">
