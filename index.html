@@ -21,6 +21,7 @@
             left: 30px;
             right: 30px; /* Adjust for better spacing on smaller screens */
             display: flex;
+            align-items: center;
             justify-content: space-between;
             padding-right: 30px; /* Add space on the right */
             box-sizing: border-box;
@@ -59,9 +60,14 @@
             margin-top: 20px; /* Space below the header */
         }
         .logo {
-            max-width: 30%; /* Ensure logo fits within smaller screens */
+            max-width: 31%; /* Ensure logo fits within smaller screens */
             height: auto;
         }
+        .logo-img {
+        width: 120px; /* Adjust the width as needed */
+        height: auto; /* Keeps the aspect ratio */
+        }
+
         .social-icons {
             margin-top: 8px; /* Space between logo and icons */
             display: flex;
@@ -111,17 +117,21 @@
 </head>
 <body>
     <header>
-        <div class="logo-text">TRIADA</div>
-        <div class="nav-links">
-            <a href="team.html">Team</a>
-            <a href="achievements.html">Achievements</a>
-            <a href="https://ctftime.org/" target="_blank">
-                <img src="ctftimelogo.svg" alt="CTFtime Logo">
-            </a>
-        </div>
-    </header>
+    <div class="logo">
+        <a href="https://team-triada.github.io/" target="_blank">
+        <img src="triada_logo.png" alt="TRIADA Logo" class="logo-img">
+    </div>
+    <div class="nav-links">
+        <a href="team.html">Team</a>
+        <a href="achievements.html">Achievements</a>
+        <a href="https://ctftime.org/" target="_blank">
+            <img src="images/ctftimelogo.svg" alt="CTFtime Logo">
+        </a>
+    </div>
+</header>
+
     <div class="logo-container">
-        <img src="binary2.png" alt="Logo" class="logo">
+        <img src="images/binary2.png" alt="Logo" class="logo">
         <div class="social-icons">
             <a href="https://github.com/Team-Triada" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
             <a href="https://www.linkedin.com/company/triada-sec/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
