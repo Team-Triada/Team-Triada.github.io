@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Team</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="team.css">
+    <link rel="icon" href="images/favicon.png" type="image/favicon.png">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <img src="images/triada_logo.png" alt="Logo" class="logo-img">
+        <nav class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="team.html">Team</a>
+            <a href="achievements.html">Achievements</a>
+            <a href="https://ctftime.org/team/303057" target="_blank">
+                <img src="images/ctftimelogo.svg" alt="CTFtime Logo">
+            </a>
+        </nav>
+        <div class="burger-menu">&#9776;</div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="content">
+        <h1 class="title">Faces behind <span class="highlight">TRIADA</span></h1>
+        <p class="description">Passionate cybersecurity enthusiasts driven to learn, innovate, and tackle challenges in digital security together.</p>
+
+        <!-- Team Section -->
+        <section class="team">
+    <div class="team-member">
+        <img src="images/Adarsh.jpg" alt="Adarsh SR">
+        <h2>Adarsh SR</h2>
+        <p>Co-Founder & Team Leader</p>
+        <div class="social-icons">
+            <a href="https://github.com/Adarsh-S-R" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/adarsh-sr" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+            <a href="mailto:adarshtriada@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
+        </div>
+    </div>
+    <div class="team-member">
+        <img src="images/Abhishek.jpg" alt="Abhishek Vincent">
+        <h2>Abhishek Vincent</h2>
+        <p>Co-Founder</p>
+        <div class="social-icons">
+            <a href="https://github.com/Abhishek-Vincent" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/abhishek-vincent" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+            <a href="mailto:abhishek@example.com" title="Email"><i class="fas fa-envelope"></i></a>
+        </div>
+    </div>
+    <div class="team-member">
+        <img src="images/triada_hridhik.jpg" alt="Hridhik S">
+        <h2>Hridhik S</h2>
+        <p>Team Member</p>
+        <div class="social-icons">
+            <a href="https://github.com/Hridhik-S" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/hridhik-s" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+            <a href="mailto:hridhik@example.com" title="Email"><i class="fas fa-envelope"></i></a>
+        </div>
+    </div>
+    <div class="team-member">
+        <img src="images/Abhinav.jpg" alt="Abhinav S">
+        <h2>Abhinav S</h2>
+        <p>Team Member</p>
+        <div class="social-icons">
+            <a href="https://github.com/Abhinav-S" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/abhinav-s" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+            <a href="mailto:abhinav@example.com" title="Email"><i class="fas fa-envelope"></i></a>
+        </div>
+    </div>
+    <div class="team-member">
+        <img src="images/NA.jpg" alt="Aron Reji">
+        <h2>Aron Reji</h2>
+        <p>Team Member</p>
+        <div class="social-icons">
+            <a href="https://github.com/Aron-Reji" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/aron-reji" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+            <a href="mailto:aron@example.com" title="Email"><i class="fas fa-envelope"></i></a>
+        </div>
+    </div>
+</section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>Team Triada - Mastering Challenges, Securing Futures.</p>
+    </footer>
+
+    <script>
+        // Toggle mobile menu
+    const burgerMenu = document.querySelector('.burger-menu');
+    const navLinks = document.querySelector('.nav-links');
+
+    burgerMenu.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+    });
+
+    document.querySelectorAll('.nav-links a').forEach(link => {
+        link.addEventListener('click', () => {
+            navLinks.classList.remove('active');
+        });
+    });
+
+    // Add class to body for fade-in effect on load
+    window.addEventListener('load', () => {
+        document.body.classList.add('loaded');
+    });
+    </script>
+</body>
+</html>
