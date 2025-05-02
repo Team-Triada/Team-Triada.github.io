@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="description"
+        content="Join TRIADA - We're recruiting talented CTF players to join our top 1% cybersecurity team. Apply now to be part of our growing community of security enthusiasts.">
+    <meta name="keywords"
+        content="CTF recruitment, join cybersecurity team, TRIADA recruitment, security team application">
+    <meta name="author" content="TRIADA Team">
+    <meta name="theme-color" content="#ff0033">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://team-triada.github.io/join.html">
+    <meta property="og:title" content="Join Our Team | TRIADA - Top 1% Cybersecurity Team">
+    <meta property="og:description"
+        content="Join TRIADA - We're recruiting talented CTF players to join our top 1% cybersecurity team. Apply now to be part of our growing community of security enthusiasts.">
+    <meta property="og:image" content="https://team-triada.github.io/images/og-image.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://team-triada.github.io/join.html">
+    <meta property="twitter:title" content="Join Our Team | TRIADA - Top 1% Cybersecurity Team">
+    <meta property="twitter:description"
+        content="Join TRIADA - We're recruiting talented CTF players to join our top 1% cybersecurity team. Apply now to be part of our growing community of security enthusiasts.">
+    <meta property="twitter:image" content="https://team-triada.github.io/images/og-image.jpg">
+
+    <title>Join Our Team | TRIADA - Top 1% Cybersecurity Team</title>
+
+    <!-- Preconnect to external domains -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+
+    <!-- Fonts -->
+    <link href="https://fonts.cdnfonts.com/css/technos" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    <link rel="manifest" href="site.webmanifest">
+
+    <!-- Material Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Material Design inspired styles */
+        .join-container {
+            width: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        .join-hero {
+            position: relative;
+            padding: 80px 0;
+            margin-bottom: 0;
+            text-align: center;
+            background: linear-gradient(135deg, rgba(255, 0, 51, 0.1) 0%, rgba(10, 10, 10, 0.9) 100%);
+            overflow: hidden;
+            width: 100%;
+        }
+
+        .join-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('images/stroke.png') no-repeat center center;
+            background-size: contain;
+            opacity: 0.1;
+            z-index: -1;
+        }
+
+        .join-hero h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+            color: var(--white);
+            font-weight: 600;
+        }
+
+        .join-hero p {
+            font-size: 18px;
+            max-width: 700px;
+            margin: 0 auto 30px;
+            color: var(--white);
+            line-height: 1.7;
+        }
+
+        .join-cta {
+            display: inline-flex;
+            align-items: center;
+            background-color: var(--primary-red);
+            color: var(--white);
+            padding: 12px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 16px;
+            letter-spacing: 0.5px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 20px rgba(255, 0, 51, 0.3);
+        }
+
+        .join-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 25px rgba(255, 0, 51, 0.4);
+        }
+
+        .join-cta .material-icons {
+            margin-left: 8px;
+        }
+
+        .section {
+            margin-bottom: 0;
+            padding: 80px 5%;
+            width: 100%;
+        }
+
+        .section:nth-child(odd) {
+            background-color: rgba(20, 20, 20, 0.3);
+        }
+
+        .section-title {
+            font-size: 32px;
+            margin-bottom: 30px;
+            color: var(--primary-red);
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background-color: var(--primary-red);
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-top: 50px;
+            width: 100%;
+        }
+
+        .benefit-item {
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .benefit-icon {
+            color: var(--primary-red);
+            font-size: 24px;
+            margin-right: 15px;
+            margin-top: 3px;
+        }
+
+        .benefit-content h3 {
+            font-size: 20px;
+            margin-bottom: 10px;
+            color: var(--white);
+        }
+
+        .benefit-content p {
+            font-size: 16px;
+            line-height: 1.6;
+            color: var(--very-light-gray);
+        }
+
+        .requirements-list {
+            list-style-type: none;
+            padding: 0;
+            margin: 30px 0;
+        }
+
+        .requirements-list li {
+            position: relative;
+            padding-left: 35px;
+            margin-bottom: 20px;
+            font-size: 16px;
+            line-height: 1.6;
+            color: var(--white);
+        }
+
+        .requirements-list li::before {
+            content: 'check';
+            font-family: 'Material Icons';
+            position: absolute;
+            left: 0;
+            top: 0;
+            color: var(--primary-red);
+            font-size: 20px;
+        }
+
+        .apply-section {
+            background: linear-gradient(to right, rgba(20, 20, 20, 0.8), rgba(40, 40, 40, 0.4));
+            padding: 100px 5%;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            width: 100%;
+        }
+
+        .apply-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(to right, var(--primary-red), transparent);
+        }
+
+        .apply-section h2 {
+            font-size: 28px;
+            margin-bottom: 20px;
+            color: var(--white);
+        }
+
+        .apply-section p {
+            font-size: 16px;
+            margin-bottom: 30px;
+            color: var(--very-light-gray);
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .contact-info {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 30px;
+            margin-top: 30px;
+        }
+
+        .contact-info a {
+            display: flex;
+            align-items: center;
+            color: var(--white);
+            text-decoration: none;
+            font-size: 18px;
+            transition: all 0.3s ease;
+            padding: 10px 20px;
+            background-color: rgba(255, 255, 255, 0.05);
+            border-radius: 30px;
+        }
+
+        .contact-info a:hover {
+            color: var(--primary-red);
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        .contact-info .material-icons {
+            color: var(--primary-red);
+            margin-right: 10px;
+            font-size: 20px;
+        }
+
+        .apply-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background-color: var(--primary-red);
+            color: var(--white);
+            padding: 18px 50px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 18px;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 20px rgba(255, 0, 51, 0.3);
+            margin-top: 20px;
+        }
+
+        .apply-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 25px rgba(255, 0, 51, 0.4);
+            background-color: var(--dark-red);
+        }
+
+        .apply-button .material-icons {
+            margin-left: 10px;
+            font-size: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .join-hero {
+                padding: 60px 20px;
+            }
+
+            .join-hero h2 {
+                font-size: 28px;
+            }
+
+            .join-hero p {
+                font-size: 16px;
+                padding: 0 15px;
+            }
+
+            .section {
+                padding: 60px 20px;
+            }
+
+            .section-title {
+                font-size: 26px;
+            }
+
+            .benefits-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .apply-section {
+                padding: 60px 20px;
+            }
+
+            .apply-button {
+                width: 100%;
+                padding: 16px 30px;
+            }
+
+            .contact-info a {
+                padding: 8px 15px;
+                font-size: 16px;
+            }
+
+            .benefit-item {
+                margin-bottom: 10px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <a href="index.html" class="brand" aria-label="Triada Home">Triada</a>
+        <nav aria-label="Main Navigation">
+            <input type="checkbox" id="nav-toggle" class="nav-toggle">
+            <label for="nav-toggle" class="nav-toggle-label" aria-label="Toggle navigation menu">
+                <span></span>
+            </label>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="team.html">Our Team</a></li>
+                <li><a href="achievements.html">Achievements</a></li>
+                <li><a href="join.html" class="active" aria-current="page">Join Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="page-container">
+        <div class="join-container">
+            <div class="join-hero">
+                <h2>Join India's Top 1% Cybersecurity Team</h2>
+                <p>We're looking for talented CTF players to join our ranks. Solve challenges, compete globally, and
+                    grow your skills with us.</p>
+                <a href="#apply" class="join-cta">Join Our Team <span class="material-icons">arrow_forward</span></a>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Why Join TRIADA?</h2>
+                <p>TRIADA is actively recruiting passionate and skilled CTF players to join our team. As a top 1%
+                    cybersecurity team in India, we participate in various CTF competitions, conduct security research,
+                    and organize educational events.</p>
+
+                <div class="benefits-grid">
+                    <div class="benefit-item">
+                        <span class="material-icons benefit-icon">trending_up</span>
+                        <div class="benefit-content">
+                            <h3>Skill Development</h3>
+                            <p>Enhance your cybersecurity skills through regular practice, team challenges, and
+                                knowledge sharing.</p>
+                        </div>
+                    </div>
+
+                    <div class="benefit-item">
+                        <span class="material-icons benefit-icon">people</span>
+                        <div class="benefit-content">
+                            <h3>Networking</h3>
+                            <p>Connect with like-minded security enthusiasts and build professional relationships in the
+                                industry.</p>
+                        </div>
+                    </div>
+
+                    <div class="benefit-item">
+                        <span class="material-icons benefit-icon">emoji_events</span>
+                        <div class="benefit-content">
+                            <h3>Competition Experience</h3>
+                            <p>Participate in national and international CTF competitions representing our team.</p>
+                        </div>
+                    </div>
+
+                    <div class="benefit-item">
+                        <span class="material-icons benefit-icon">lightbulb</span>
+                        <div class="benefit-content">
+                            <h3>Research Opportunities</h3>
+                            <p>Contribute to security research projects and potentially publish your findings.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">What We're Looking For</h2>
+                <p>We value passion and dedication over experience. If you're eager to learn and grow in cybersecurity,
+                    we want to hear from you.</p>
+
+                <ul class="requirements-list">
+                    <li>Passion for cybersecurity and CTF competitions</li>
+                    <li>Basic knowledge in at least one area: web security, cryptography, reverse engineering, binary
+                        exploitation, or forensics</li>
+                    <li>Willingness to learn and improve your skills</li>
+                    <li>Team player mentality and good communication skills</li>
+                    <li>Ability to dedicate time for team practice sessions and competitions</li>
+                    <li>Previous CTF experience is a plus but not required</li>
+                </ul>
+            </div>
+
+            <div id="apply" class="apply-section">
+                <h2>Ready to Join Our Team?</h2>
+                <p>Complete our application form by clicking the button below. If you have any questions, feel free to
+                    reach out to us via email.</p>
+
+                <div class="contact-info">
+                    <a href="mailto:adarshtriada@gmail.com">
+                        <span class="material-icons">email</span>
+                        adarshtriada@gmail.com
+                    </a>
+                </div>
+
+                <a href="https://forms.gle/hhZW1NmRuLsGoCFj8" class="apply-button" target="_blank">
+                    Apply Now
+                    <span class="material-icons">arrow_forward</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">Triada</div>
+            <div class="footer-links">
+                <a href="index.html">Home</a>
+                <a href="team.html">Our Team</a>
+                <a href="achievements.html">Achievements</a>
+                <a href="join.html">Join Us</a>
+            </div>
+            <div class="social-links-footer">
+                <a href="https://github.com/team-triada" class="social-icon-footer" aria-label="GitHub Profile"><i
+                        class="fab fa-github" aria-hidden="true"></i></a>
+                <a href="https://www.linkedin.com/company/teamtriada" class="social-icon-footer"
+                    aria-label="LinkedIn Profile"><i class="fab fa-linkedin" aria-hidden="true"></i></a>
+                <a href="https://x.com/teamtriada" class="social-icon-footer" aria-label="Twitter/X Profile"><i
+                        class="fab fa-twitter" aria-hidden="true"></i></a>
+                <a href="https://ctftime.org/team/303057" class="social-icon-footer" target="_blank"
+                    aria-label="CTFtime Profile"><img src="images/ctftimelogo.svg" alt="CTFtime"
+                        class="ctftime-logo"></a>
+            </div>
+            <div class="footer-copyright">
+                &copy;
+                <script>document.write(new Date().getFullYear())</script> TRIADA. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script src="scripts.js"></script>
+</body>
+
+</html>
