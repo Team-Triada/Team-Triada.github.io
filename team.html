@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta name="description"
         content="Meet the talented team members of TRIADA - cybersecurity specialists with expertise in different domains including penetration testing, malware analysis, cryptography, and web security.">
     <meta name="keywords" content="cybersecurity team, TRIADA team, security specialists, CTF team members">
@@ -11,7 +11,23 @@
     <meta name="theme-color" content="#ff0033">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <title>Our Team | TRIADA</title>
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://team-triada.github.io/team.html">
+    <meta property="og:title" content="Meet Our Team | TRIADA - Top 1% Cybersecurity Team">
+    <meta property="og:description"
+        content="Meet the talented team members of TRIADA - cybersecurity specialists with expertise in different domains including penetration testing, malware analysis, cryptography, and web security.">
+    <meta property="og:image" content="https://team-triada.github.io/images/og-image.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://team-triada.github.io/team.html">
+    <meta property="twitter:title" content="Meet Our Team | TRIADA - Top 1% Cybersecurity Team">
+    <meta property="twitter:description"
+        content="Meet the talented team members of TRIADA - cybersecurity specialists with expertise in different domains including penetration testing, malware analysis, cryptography, and web security.">
+    <meta property="twitter:image" content="https://team-triada.github.io/images/og-image.jpg">
+
+    <title>Meet Our Team | TRIADA - Top 1% Cybersecurity Team</title>
 
     <!-- Preconnect to external domains -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -44,8 +60,9 @@
             </label>
             <ul>
                 <li><a href="index.html">Home</a></li>
-                <li><a href="team.html" class="active">Our Team</a></li>
+                <li><a href="team.html" class="active" aria-current="page">Our Team</a></li>
                 <li><a href="achievements.html">Achievements</a></li>
+                <li><a href="join.html">Join Us</a></li>
             </ul>
         </nav>
     </header>
@@ -106,7 +123,31 @@
 
             <div class="team-member">
                 <div class="member-image">
-                    <img src="images/triada hridhik.jpg" alt="David Lee">
+                    <img src="images/Likith.jpg" alt="David Lee">
+                    <div class="member-social-overlay">
+                        <a href="https://www.linkedin.com/in/likith-a-161564293/" class="social-icon"><i
+                                class="fab fa-linkedin"></i> </a>
+                        <a href="https://github.com/" class="social-icon"><i class="fab fa-github"></i>
+                        </a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+                <div class="member-info">
+                    <h3>Likith A</h3>
+                    <p class="member-title">Team Member</p>
+                    <p class="member-bio"></p>
+                    <div class="member-social">
+                        <a href="https://www.linkedin.com/in/likith-a-161564293/" class="social-icon"><i
+                                class="fab fa-linkedin"></i> </a>
+                        <a href="https://github.com" class="social-icon"><i class="fab fa-github"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="team-member">
+                <div class="member-image">
+                    <img src="images/hridhik.jpg" alt="David Lee">
                     <div class="member-social-overlay">
                         <a href="https://www.linkedin.com/in/hridhikjester/" class="social-icon"><i
                                 class="fab fa-linkedin"></i> </a>
@@ -158,6 +199,7 @@
                 <a href="index.html">Home</a>
                 <a href="team.html">Our Team</a>
                 <a href="achievements.html">Achievements</a>
+                <a href="join.html">Join Us</a>
             </div>
             <div class="social-links-footer">
                 <a href="https://github.com/team-triada" class="social-icon-footer"><i class="fab fa-github"></i></a>
@@ -168,7 +210,8 @@
                         src="images/ctftimelogo.svg" alt="CTFtime" class="ctftime-logo"></a>
             </div>
             <div class="footer-copyright">
-                &copy; 2025 TRIADA. All rights reserved.
+                &copy;
+                <script>document.write(new Date().getFullYear())</script> TRIADA. All rights reserved.
             </div>
         </div>
     </footer>
