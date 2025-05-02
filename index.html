@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta name="description"
         content="TRIADA is a team of college students passionate about cyber security, dedicated to protect tomorrow's cyberspace through research, education and innovation.">
     <meta name="keywords" content="cybersecurity, TRIADA, security research, CTF team, infosec">
@@ -11,7 +11,23 @@
     <meta name="theme-color" content="#ff0033">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <title>TRIADA | CTF Team</title>
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://team-triada.github.io/">
+    <meta property="og:title" content="TRIADA | Top 1% Cybersecurity CTF Team">
+    <meta property="og:description"
+        content="TRIADA is a team of cybersecurity enthusiasts ranked in the top 1% of teams in India, dedicated to protecting tomorrow's cyberspace through research, education and innovation.">
+    <meta property="og:image" content="https://team-triada.github.io/images/og-image.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://team-triada.github.io/">
+    <meta property="twitter:title" content="TRIADA | Top 1% Cybersecurity CTF Team">
+    <meta property="twitter:description"
+        content="TRIADA is a team of cybersecurity enthusiasts ranked in the top 1% of teams in India, dedicated to protecting tomorrow's cyberspace through research, education and innovation.">
+    <meta property="twitter:image" content="https://team-triada.github.io/images/og-image.jpg">
+
+    <title>TRIADA | Top 1% Cybersecurity CTF Team</title>
 
     <!-- Preconnect to external domains -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -36,16 +52,17 @@
 
 <body>
     <header>
-        <a href="index.html" class="brand">Triada</a>
-        <nav>
+        <a href="index.html" class="brand" aria-label="Triada Home">Triada</a>
+        <nav aria-label="Main Navigation">
             <input type="checkbox" id="nav-toggle" class="nav-toggle">
-            <label for="nav-toggle" class="nav-toggle-label">
+            <label for="nav-toggle" class="nav-toggle-label" aria-label="Toggle navigation menu">
                 <span></span>
             </label>
             <ul>
-                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="index.html" class="active" aria-current="page">Home</a></li>
                 <li><a href="team.html">Our Team</a></li>
                 <li><a href="achievements.html">Achievements</a></li>
+                <li><a href="join.html">Join Us</a></li>
             </ul>
         </nav>
     </header>
@@ -60,17 +77,19 @@
             <div class="main-logo">Triada</div>
             <div class="description">
                 We are a team of passionate cybersecurity enthusiasts specializing in CTF competitions, ethical hacking,
-                and security research. We organize infosec events, trainings, and work on a wide variety of
-                cyber-security research
-                projects.
+                and security research. Ranked in the top 1% of cybersecurity teams in India, we organize infosec events,
+                trainings, and work on a wide variety of cyber-security research projects.
             </div>
-            <div class="social-links-home">
-                <a href="https://github.com/team-triada" class="social-icon-home"><i class="fab fa-github"></i></a>
-                <a href="https://www.linkedin.com/company/teamtriada" class="social-icon-home"><i
-                        class="fab fa-linkedin"></i></a>
-                <a href="https://x.com/teamtriada" class="social-icon-home"><i class="fab fa-twitter"></i></a>
-                <a href="https://ctftime.org/team/303057" class="social-icon-home" target="_blank"><img
-                        src="images/ctftimelogo.svg" alt="CTFtime" class="ctftime-logo"></a>
+            <div class="social-links-home" aria-label="Social Media Links">
+                <a href="https://github.com/team-triada" class="social-icon-home" aria-label="GitHub Profile"><i
+                        class="fab fa-github" aria-hidden="true"></i></a>
+                <a href="https://www.linkedin.com/company/teamtriada" class="social-icon-home"
+                    aria-label="LinkedIn Profile"><i class="fab fa-linkedin" aria-hidden="true"></i></a>
+                <a href="https://x.com/teamtriada" class="social-icon-home" aria-label="Twitter/X Profile"><i
+                        class="fab fa-twitter" aria-hidden="true"></i></a>
+                <a href="https://ctftime.org/team/303057" class="social-icon-home" target="_blank"
+                    aria-label="CTFtime Profile"><img src="images/ctftimelogo.svg" alt="CTFtime"
+                        class="ctftime-logo"></a>
             </div>
             <div class="cta-buttons">
                 <a href="team.html" class="btn btn-primary">Our Team</a>
@@ -86,6 +105,7 @@
                 <a href="index.html">Home</a>
                 <a href="team.html">Our Team</a>
                 <a href="achievements.html">Achievements</a>
+                <a href="join.html">Join Us</a>
             </div>
             <div class="social-links-footer">
                 <a href="https://github.com/team-triada" class="social-icon-footer"><i class="fab fa-github"></i></a>
@@ -96,12 +116,31 @@
                         src="images/ctftimelogo.svg" alt="CTFtime" class="ctftime-logo"></a>
             </div>
             <div class="footer-copyright">
-                &copy; 2025 TRIADA. All rights reserved.
+                &copy;
+                <script>document.write(new Date().getFullYear())</script> TRIADA. All rights reserved.
             </div>
         </div>
     </footer>
 
     <script src="scripts.js"></script>
+
+    <!-- Structured Data for SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "TRIADA",
+      "url": "https://team-triada.github.io/",
+      "logo": "https://team-triada.github.io/images/favicon.png",
+      "description": "TRIADA is a team of cybersecurity enthusiasts ranked in the top 1% of teams in India, dedicated to protecting tomorrow's cyberspace through research, education and innovation.",
+      "sameAs": [
+        "https://github.com/team-triada",
+        "https://www.linkedin.com/company/teamtriada",
+        "https://x.com/teamtriada",
+        "https://ctftime.org/team/303057"
+      ]
+    }
+    </script>
 </body>
 
 </html>
