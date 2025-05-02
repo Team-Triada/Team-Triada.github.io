@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta name="description"
         content="Explore TRIADA's significant achievements in cybersecurity including competition wins, research publications, tool development, and community education initiatives.">
     <meta name="keywords" content="cybersecurity achievements, TRIADA achievements, CTF competition, security research">
@@ -11,7 +11,23 @@
     <meta name="theme-color" content="#ff0033">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <title>Achievements | TRIADA</title>
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://team-triada.github.io/achievements.html">
+    <meta property="og:title" content="Achievements | TRIADA - Top 1% Cybersecurity Team">
+    <meta property="og:description"
+        content="Explore TRIADA's significant achievements in cybersecurity including competition wins, research publications, tool development, and community education initiatives.">
+    <meta property="og:image" content="https://team-triada.github.io/images/og-image.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://team-triada.github.io/achievements.html">
+    <meta property="twitter:title" content="Achievements | TRIADA - Top 1% Cybersecurity Team">
+    <meta property="twitter:description"
+        content="Explore TRIADA's significant achievements in cybersecurity including competition wins, research publications, tool development, and community education initiatives.">
+    <meta property="twitter:image" content="https://team-triada.github.io/images/og-image.jpg">
+
+    <title>Achievements | TRIADA - Top 1% Cybersecurity Team</title>
 
     <!-- Preconnect to external domains -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -45,7 +61,8 @@
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="team.html">Our Team</a></li>
-                <li><a href="achievements.html" class="active">Achievements</a></li>
+                <li><a href="achievements.html" class="active" aria-current="page">Achievements</a></li>
+                <li><a href="join.html">Join Us</a></li>
             </ul>
         </nav>
     </header>
@@ -57,6 +74,12 @@
         </div>
 
         <div class="achievements-grid">
+            <div class="achievement-card">
+                <h3>Top 1% in India</h3>
+                <p>Ranked among the top 1% of cybersecurity teams in India, demonstrating our exceptional skills and
+                    dedication.</p>
+            </div>
+
             <div class="achievement-card">
                 <h3>Top 50 in India</h3>
                 <p>Ranked among the top 50 CTF teams across India, competing against over 5000+ teams nationwide.</p>
@@ -94,6 +117,7 @@
                 <a href="index.html">Home</a>
                 <a href="team.html">Our Team</a>
                 <a href="achievements.html">Achievements</a>
+                <a href="join.html">Join Us</a>
             </div>
             <div class="social-links-footer">
                 <a href="https://github.com/team-triada" class="social-icon-footer"><i class="fab fa-github"></i></a>
@@ -104,7 +128,8 @@
                         src="images/ctftimelogo.svg" alt="CTFtime" class="ctftime-logo"></a>
             </div>
             <div class="footer-copyright">
-                &copy; 2025 TRIADA. All rights reserved.
+                &copy;
+                <script>document.write(new Date().getFullYear())</script> TRIADA. All rights reserved.
             </div>
         </div>
     </footer>
