@@ -1,12 +1,53 @@
 document.addEventListener('DOMContentLoaded', function () {
-    // Close mobile menu when a link is clicked
+    // Fix for mobile viewport height issues
+    function setMobileViewportHeight() {
+        // First we get the viewport height and multiply it by 1% to get a value for a vh unit
+        let vh = window.innerHeight * 0.01;
+        // Then we set the value in the --vh custom property to the root of the document
+        document.documentElement.style.setProperty('--vh', `${vh}px`);
+    }
+
+    // Set the height initially
+    setMobileViewportHeight();
+
+    // Reset on resize and orientation change
+    window.addEventListener('resize', setMobileViewportHeight);
+    window.addEventListener('orientationchange', setMobileViewportHeight);
+    // Mobile menu functionality
     const navLinks = document.querySelectorAll('nav a');
     const navToggle = document.getElementById('nav-toggle');
+    const navToggleLabel = document.querySelector('.nav-toggle-label');
+    const body = document.body;
 
+    // Function to toggle mobile menu
+    function toggleMobileMenu() {
+        if (navToggle.checked) {
+            body.style.overflow = 'hidden'; // Prevent scrolling when menu is open
+        } else {
+            body.style.overflow = ''; // Restore scrolling when menu is closed
+        }
+    }
+
+    // Toggle menu when hamburger is clicked
+    navToggleLabel.addEventListener('click', function () {
+        toggleMobileMenu();
+    });
+
+    // Close mobile menu when a link is clicked
     navLinks.forEach(link => {
         link.addEventListener('click', function () {
             navToggle.checked = false;
+            body.style.overflow = ''; // Restore scrolling
         });
+    });
+
+    // Close menu when clicking outside
+    document.addEventListener('click', function (event) {
+        const isClickInsideNav = event.target.closest('nav');
+        if (!isClickInsideNav && navToggle.checked) {
+            navToggle.checked = false;
+            body.style.overflow = '';
+        }
     });
 
     // Lazy load images
@@ -29,9 +70,12 @@ document.addEventListener('DOMContentLoaded', function () {
             if (href !== '#') {
                 e.preventDefault();
 
-                document.querySelector(href).scrollIntoView({
-                    behavior: 'smooth'
-                });
+                const targetElement = document.querySelector(href);
+                if (targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
             }
         });
     });
