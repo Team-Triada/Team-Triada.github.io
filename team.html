@@ -52,10 +52,10 @@
 
 <body>
     <header>
-        <a href="index.html" class="brand">Triada</a>
-        <nav>
+        <a href="index.html" class="brand" aria-label="Triada Home">Triada</a>
+        <nav aria-label="Main Navigation">
             <input type="checkbox" id="nav-toggle" class="nav-toggle">
-            <label for="nav-toggle" class="nav-toggle-label">
+            <label for="nav-toggle" class="nav-toggle-label" aria-label="Toggle navigation menu">
                 <span></span>
             </label>
             <ul>
@@ -73,6 +73,17 @@
             <div class="subtitle">Meet the minds behind Triada</div>
         </div>
 
+        <div class="team-status-legend" aria-label="Member Status Legend">
+            <div class="status-item">
+                <span class="status-dot active" aria-hidden="true"></span>
+                <span class="status-text">Active</span>
+            </div>
+            <div class="status-item">
+                <span class="status-dot inactive" aria-hidden="true"></span>
+                <span class="status-text">Inactive</span>
+            </div>
+        </div>
+
         <div class="team-grid">
             <div class="team-member">
                 <div class="member-image">
@@ -83,6 +94,9 @@
                         <a href="https://x.com/adarsh_sr_"><i class="fab fa-twitter"></i></a>
                         <a href="https://adarsh-s-r.github.io" target="_blank"><i
                                 class="fas fa-globe portfolio-icon"></i></a>
+                    </div>
+                    <div class="member-status active" aria-label="Active Member">
+                        <span class="status-dot active" aria-hidden="true"></span>
                     </div>
                 </div>
                 <div class="member-info">
@@ -108,6 +122,9 @@
                         <a href="https://github.com/Abhizzz123" class="social-icon"><i class="fab fa-github"></i></a>
                         <a href="#"><i class="fab fa-twitter"></i></a>
                     </div>
+                    <div class="member-status inactive" aria-label="Inactive Member">
+                        <span class="status-dot inactive" aria-hidden="true"></span>
+                    </div>
                 </div>
                 <div class="member-info">
                     <h3>Abhishek Vincent</h3>
@@ -130,6 +147,9 @@
                         <a href="https://github.com/bytesbylikith" class="social-icon"><i class="fab fa-github"></i>
                         </a>
                         <a href="#"><i class="fab fa-twitter"></i></a>
+                    </div>
+                    <div class="member-status active" aria-label="Active Member">
+                        <span class="status-dot active" aria-hidden="true"></span>
                     </div>
                 </div>
                 <div class="member-info">
@@ -155,6 +175,9 @@
                         </a>
                         <a href="#"><i class="fab fa-twitter"></i></a>
                     </div>
+                    <div class="member-status inactive" aria-label="Inactive Member">
+                        <span class="status-dot inactive" aria-hidden="true"></span>
+                    </div>
                 </div>
                 <div class="member-info">
                     <h3>Hridhik S</h3>
@@ -176,6 +199,9 @@
                         <a href="https://www.linkedin.com/in/-abhinav-s/"><i class="fab fa-linkedin"></i></a>
                         <a href="#"><i class="fab fa-github"></i></a>
                         <a href="#"><i class="fab fa-twitter"></i></a>
+                    </div>
+                    <div class="member-status inactive" aria-label="Inactive Member">
+                        <span class="status-dot inactive" aria-hidden="true"></span>
                     </div>
                 </div>
                 <div class="member-info">
@@ -202,12 +228,15 @@
                 <a href="join.html">Join Us</a>
             </div>
             <div class="social-links-footer">
-                <a href="https://github.com/team-triada" class="social-icon-footer"><i class="fab fa-github"></i></a>
-                <a href="https://www.linkedin.com/company/teamtriada" class="social-icon-footer"><i
-                        class="fab fa-linkedin"></i></a>
-                <a href="https://x.com/teamtriada" class="social-icon-footer"><i class="fab fa-twitter"></i></a>
-                <a href="https://ctftime.org/team/303057" class="social-icon-footer" target="_blank"><img
-                        src="images/ctftimelogo.svg" alt="CTFtime" class="ctftime-logo"></a>
+                <a href="https://github.com/team-triada" class="social-icon-footer" aria-label="GitHub Profile"><i
+                        class="fab fa-github" aria-hidden="true"></i></a>
+                <a href="https://www.linkedin.com/company/teamtriada" class="social-icon-footer"
+                    aria-label="LinkedIn Profile"><i class="fab fa-linkedin" aria-hidden="true"></i></a>
+                <a href="https://x.com/teamtriada" class="social-icon-footer" aria-label="Twitter/X Profile"><i
+                        class="fab fa-twitter" aria-hidden="true"></i></a>
+                <a href="https://ctftime.org/team/303057" class="social-icon-footer" target="_blank"
+                    aria-label="CTFtime Profile"><img src="images/ctftimelogo.svg" alt="CTFtime"
+                        class="ctftime-logo"></a>
             </div>
             <div class="footer-copyright">
                 &copy;
