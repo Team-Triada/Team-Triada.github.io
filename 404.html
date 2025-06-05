@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="description" content="Page not found - TRIADA Cybersecurity Team">
+    <meta name="theme-color" content="#ff0033">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>Page Not Found | TRIADA</title>
+
+    <!-- Preconnect to external domains -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+
+    <!-- Fonts -->
+    <link href="https://fonts.cdnfonts.com/css/technos" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    <link rel="manifest" href="site.webmanifest">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .error-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            min-height: 70vh;
+            padding: 2rem;
+        }
+
+        .error-code {
+            font-family: var(--logo-font);
+            font-size: 120px;
+            color: var(--primary-red);
+            margin-bottom: 1rem;
+            text-shadow: var(--text-glow);
+            animation: glowPulse 2s infinite alternate;
+        }
+
+        .error-message {
+            font-size: 24px;
+            margin-bottom: 2rem;
+        }
+
+        .error-description {
+            font-size: 18px;
+            max-width: 600px;
+            margin-bottom: 2rem;
+            color: var(--very-light-gray);
+        }
+
+        @media (max-width: 768px) {
+            .error-code {
+                font-size: 100px;
+            }
+
+            .error-message {
+                font-size: 24px;
+                margin-bottom: 20px;
+            }
+
+            .error-description {
+                font-size: 18px;
+                line-height: 1.6;
+                padding: 0 15px;
+            }
+
+            .error-container {
+                padding: 3rem 1rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <a href="index.html" class="brand" aria-label="Triada Home">Triada</a>
+        <nav aria-label="Main Navigation">
+            <input type="checkbox" id="nav-toggle" class="nav-toggle">
+            <label for="nav-toggle" class="nav-toggle-label" aria-label="Toggle navigation menu">
+                <span></span>
+            </label>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="team.html">Our Team</a></li>
+                <li><a href="achievements.html">Achievements</a></li>
+                <li><a href="join.html">Join Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="page-container">
+        <div class="error-container">
+            <div class="error-code">404</div>
+            <h1 class="error-message">Page Not Found</h1>
+            <p class="error-description">The page you are looking for might have been removed, had its name changed, or
+                is temporarily unavailable. Maybe you found a hidden flag?</p>
+            <div class="cta-buttons">
+                <a href="index.html" class="btn btn-primary">Back to Home</a>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">Triada</div>
+            <div class="footer-links">
+                <a href="index.html">Home</a>
+                <a href="team.html">Our Team</a>
+                <a href="achievements.html">Achievements</a>
+                <a href="join.html">Join Us</a>
+            </div>
+            <div class="social-links-footer">
+                <a href="https://github.com/team-triada" class="social-icon-footer" aria-label="GitHub Profile"><i
+                        class="fab fa-github" aria-hidden="true"></i></a>
+                <a href="https://www.linkedin.com/company/teamtriada" class="social-icon-footer"
+                    aria-label="LinkedIn Profile"><i class="fab fa-linkedin" aria-hidden="true"></i></a>
+                <a href="https://x.com/teamtriada" class="social-icon-footer" aria-label="Twitter/X Profile"><i
+                        class="fab fa-twitter" aria-hidden="true"></i></a>
+                <a href="https://ctftime.org/team/303057" class="social-icon-footer" target="_blank"
+                    aria-label="CTFtime Profile"><img src="images/ctftimelogo.svg" alt="CTFtime"
+                        class="ctftime-logo"></a>
+            </div>
+            <div class="footer-copyright">
+                &copy;
+                <script>document.write(new Date().getFullYear())</script> TRIADA. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script src="scripts.js"></script>
+</body>
+
+</html>
