@@ -1974,3 +1974,48 @@ img {
 .community-partner-mobile {
     display: none;
 }
+
+/* Community Partner Responsive Fix */
+@media screen and (max-width: 600px) {
+
+    .logo-section .community-partner-label,
+    .logo-section .community-partner-link {
+        display: block !important;
+        width: 100% !important;
+        text-align: center !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        height: auto !important;
+        position: static !important;
+    }
+
+    .logo-section .community-partner-link {
+        margin-top: 0 !important;
+        margin-bottom: 8px !important;
+        justify-content: center !important;
+        align-items: center !important;
+    }
+
+    .logo-section .community-partner-img {
+        width: 48vw !important;
+        min-width: 100px !important;
+        max-width: 250px !important;
+        height: auto !important;
+        border-radius: 8px !important;
+        margin: 0 auto !important;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08) !important;
+        padding: 0 !important;
+        background: none !important;
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .logo-section .community-partner-img {
+        width: 80vw !important;
+        min-width: 80px !important;
+        max-width: 95vw !important;
+    }
+}
