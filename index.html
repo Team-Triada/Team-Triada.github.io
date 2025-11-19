@@ -51,6 +51,30 @@
 </head>
 
 <body>
+    <div class="triada-background" aria-hidden="true">
+        <div class="triada-gradient"></div>
+        <div class="triada-glow triada-glow-1"></div>
+        <div class="triada-glow triada-glow-2"></div>
+        <div class="triada-text-wall">
+            <div class="triada-text-row fast">
+                <span>TRIADA • TRIADA • TRIADA • TRIADA • TRIADA • TRIADA • TRIADA</span>
+            </div>
+            <div class="triada-text-row">
+                <span>TRIADA • TRIADA • TRIADA • TRIADA • TRIADA • TRIADA • TRIADA</span>
+            </div>
+            <div class="triada-text-row slow">
+                <span>TRIADA • TRIADA • TRIADA • TRIADA • TRIADA • TRIADA • TRIADA</span>
+            </div>
+        </div>
+        <div class="triada-particles">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
     <header>
         <a href="index.html" class="brand" aria-label="Triada Home">Triada</a>
         <nav aria-label="Main Navigation">
@@ -72,20 +96,113 @@
         <div class="logo-section">
             <div class="red-overlay"></div>
             <div class="logo-background" style="margin-bottom:32px;"></div>
-            <div class="community-partner-label" style="text-align:center; margin-bottom:8px;">Community Partner</div>
-            <a href="https://india.c0c0n.org/2025/" target="_blank" rel="noopener" class="community-partner-link"
-                style="display:flex; justify-content:center; align-items:center; margin-top:0;">
-                <img src="images/c0c0n-Logo-2025-black-SVG.svg" alt="c0c0n 2025 Logo" class="community-partner-img"
-                    style="max-width:250px; min-width:100px; width:28vw; height:auto; display:block; border-radius:8px; object-fit:contain; background:none; padding:0; box-shadow:0 2px 8px rgba(0,0,0,0.08); margin:0 auto;" />
-            </a>
+            <div class="logo-signal-chips" aria-hidden="true">
+                <span>CTF OPS</span>
+                <span>RESEARCH DROP</span>
+                <span>BLUE TEAM LAB</span>
+                <span>FORENSICS</span>
+                <span>EXPLOIT DEV</span>
+            </div>
         </div>
 
         <div class="content-section">
             <div class="main-logo">Triada</div>
+            <div class="signal-badge" role="status">
+                <span class="signal-dot" aria-hidden="true"></span>
+                <span class="signal-text">Active cyber defense collective</span>
+            </div>
+            <div class="hero-ticker" aria-label="Live mission feed">
+                <div class="ticker-track">
+                    <span>Threat hunting lab refresh</span>
+                    <span>Binary blitz practice block</span>
+                    <span>University outreach sprint</span>
+                    <span>CTFtime qualifier recon</span>
+                    <span>Research note publication</span>
+                </div>
+            </div>
             <div class="description">
                 We are a team of passionate cybersecurity enthusiasts specializing in CTF competitions, ethical hacking,
                 and security research. Ranked in the top 1% of cybersecurity teams in India, we organize infosec events,
                 trainings, and work on a wide variety of cyber-security research projects.
+            </div>
+            <div class="glow-stats" aria-label="TRIADA highlights">
+                <div class="stat-card">
+                    <p class="stat-label">Ranking</p>
+                    <p class="stat-value">Top 1% in India</p>
+                    <p class="stat-meta">CTFtime performance & podium finishes</p>
+                </div>
+                <div class="stat-card">
+                    <p class="stat-label">Focus</p>
+                    <p class="stat-value">CTFs · Research · Training</p>
+                    <p class="stat-meta">Hands-on offensive and defensive tracks</p>
+                </div>
+                <div class="stat-card">
+                    <p class="stat-label">Alliances</p>
+                    <p class="stat-value">Community partners</p>
+                    <p class="stat-meta">Driving community-first security programs</p>
+                </div>
+            </div>
+            <div class="intel-grid" aria-label="Live team signals">
+                <div class="intel-card">
+                    <p class="intel-eyebrow">Ops in progress</p>
+                    <ul class="intel-list">
+                        <li>
+                            <span>Threat Village playbooks</span>
+                            <small>Detection engineering</small>
+                        </li>
+                        <li>
+                            <span>Binary blitz rehearsal</span>
+                            <small>Reverse engineering pod</small>
+                        </li>
+                        <li>
+                            <span>Red team sparring</span>
+                            <small>Pwn + web hybrid drills</small>
+                        </li>
+                    </ul>
+                </div>
+                <div class="intel-card">
+                    <p class="intel-eyebrow">Latest dispatch</p>
+                    <div class="intel-feed">
+                        <div class="intel-feed-item">
+                            <span class="feed-dot"></span>
+                            <div>
+                                <p class="feed-title">Seasides after-action</p>
+                                <p class="feed-meta">Report published · 4 hrs ago</p>
+                            </div>
+                        </div>
+                        <div class="intel-feed-item">
+                            <span class="feed-dot"></span>
+                            <div>
+                                <p class="feed-title">New labs drop</p>
+                                <p class="feed-meta">Partner campuses · 1 day ago</p>
+                            </div>
+                        </div>
+                        <div class="intel-feed-item">
+                            <span class="feed-dot"></span>
+                            <div>
+                                <p class="feed-title">Open mentoring</p>
+                                <p class="feed-meta">slots available · this week</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="intel-card">
+                    <p class="intel-eyebrow">Next up</p>
+                    <div class="intel-pulses">
+                        <div>
+                            <span class="pulse-label">CTFtime season</span>
+                            <span class="pulse-status">Peak</span>
+                        </div>
+                        <div>
+                            <span class="pulse-label">Research series</span>
+                            <span class="pulse-status neutral">In review</span>
+                        </div>
+                        <div>
+                            <span class="pulse-label">Campus tours</span>
+                            <span class="pulse-status positive">Booking</span>
+                        </div>
+                    </div>
+                </div>
             </div>
             <div class="social-links-home" aria-label="Social Media Links">
                 <a href="https://github.com/team-triada" class="social-icon-home" aria-label="GitHub Profile"><i

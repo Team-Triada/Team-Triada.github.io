@@ -122,4 +122,58 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Call touch effect function
     addTouchEffect();
+
+    // Count up animations for metrics
+    const counterElements = document.querySelectorAll('.count-up');
+
+    if (counterElements.length) {
+        const animateCount = (element) => {
+            const target = parseFloat(element.dataset.count);
+            if (isNaN(target) || element.dataset.counted === 'true') return;
+
+            const duration = parseInt(element.dataset.duration || '2000', 10);
+            const decimals = parseInt(element.dataset.decimals || '0', 10);
+            const startValue = parseFloat(element.dataset.start || '0');
+            let startTime = null;
+
+            const formatter = (value) => {
+                const fixed = value.toFixed(decimals);
+                return fixed.replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+            };
+
+            const easeOut = (t) => 1 - Math.pow(1 - t, 3);
+
+            const step = (timestamp) => {
+                if (!startTime) startTime = timestamp;
+                const progress = Math.min((timestamp - startTime) / duration, 1);
+                const eased = easeOut(progress);
+                const value = startValue + (target - startValue) * eased;
+                element.textContent = formatter(value);
+
+                if (progress < 1) {
+                    requestAnimationFrame(step);
+                } else {
+                    element.textContent = formatter(target);
+                    element.dataset.counted = 'true';
+                }
+            };
+
+            requestAnimationFrame(step);
+        };
+
+        if (window.IntersectionObserver) {
+            const counterObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        animateCount(entry.target);
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.4 });
+
+            counterElements.forEach(el => counterObserver.observe(el));
+        } else {
+            counterElements.forEach(el => animateCount(el));
+        }
+    }
 });
