@@ -379,69 +379,69 @@ document.addEventListener('DOMContentLoaded', function () {
             this.style.transition = 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)';
         });
 
-<<<<<<< HEAD
-    // Call touch effect function
-    addTouchEffect();
 
-    // Count up animations for metrics
-    const counterElements = document.querySelectorAll('.count-up');
+        // Call touch effect function
+        addTouchEffect();
 
-    if (counterElements.length) {
-        const animateCount = (element) => {
-            const target = parseFloat(element.dataset.count);
-            if (isNaN(target) || element.dataset.counted === 'true') return;
+        // Count up animations for metrics
+        const counterElements = document.querySelectorAll('.count-up');
 
-            const duration = parseInt(element.dataset.duration || '2000', 10);
-            const decimals = parseInt(element.dataset.decimals || '0', 10);
-            const startValue = parseFloat(element.dataset.start || '0');
-            let startTime = null;
+        if (counterElements.length) {
+            const animateCount = (element) => {
+                const target = parseFloat(element.dataset.count);
+                if (isNaN(target) || element.dataset.counted === 'true') return;
 
-            const formatter = (value) => {
-                const fixed = value.toFixed(decimals);
-                return fixed.replace(/\B(?=(\d{3})+(?!\d))/g, ',');
-            };
+                const duration = parseInt(element.dataset.duration || '2000', 10);
+                const decimals = parseInt(element.dataset.decimals || '0', 10);
+                const startValue = parseFloat(element.dataset.start || '0');
+                let startTime = null;
 
-            const easeOut = (t) => 1 - Math.pow(1 - t, 3);
+                const formatter = (value) => {
+                    const fixed = value.toFixed(decimals);
+                    return fixed.replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+                };
 
-            const step = (timestamp) => {
-                if (!startTime) startTime = timestamp;
-                const progress = Math.min((timestamp - startTime) / duration, 1);
-                const eased = easeOut(progress);
-                const value = startValue + (target - startValue) * eased;
-                element.textContent = formatter(value);
+                const easeOut = (t) => 1 - Math.pow(1 - t, 3);
 
-                if (progress < 1) {
-                    requestAnimationFrame(step);
-                } else {
-                    element.textContent = formatter(target);
-                    element.dataset.counted = 'true';
-                }
-            };
+                const step = (timestamp) => {
+                    if (!startTime) startTime = timestamp;
+                    const progress = Math.min((timestamp - startTime) / duration, 1);
+                    const eased = easeOut(progress);
+                    const value = startValue + (target - startValue) * eased;
+                    element.textContent = formatter(value);
 
-            requestAnimationFrame(step);
-        };
-
-        if (window.IntersectionObserver) {
-            const counterObserver = new IntersectionObserver((entries, observer) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        animateCount(entry.target);
-                        observer.unobserve(entry.target);
+                    if (progress < 1) {
+                        requestAnimationFrame(step);
+                    } else {
+                        element.textContent = formatter(target);
+                        element.dataset.counted = 'true';
                     }
-                });
-            }, { threshold: 0.4 });
+                };
 
-            counterElements.forEach(el => counterObserver.observe(el));
-        } else {
-            counterElements.forEach(el => animateCount(el));
+                requestAnimationFrame(step);
+            };
+
+            if (window.IntersectionObserver) {
+                const counterObserver = new IntersectionObserver((entries, observer) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            animateCount(entry.target);
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                }, { threshold: 0.4 });
+
+                counterElements.forEach(el => counterObserver.observe(el));
+            } else {
+                counterElements.forEach(el => animateCount(el));
+            }
         }
-    }
-=======
+
         card.addEventListener('mouseleave', function () {
             this.style.transform = 'translateY(0) scale(1)';
         });
     });
->>>>>>> 28f0315 (updated)
+
 });
 
 // Button ripple effect
@@ -561,4 +561,22 @@ console.log(`
     'color: #ff0033; font-size: 24px; font-weight: bold;',
     'color: #ffffff; font-size: 14px;',
     'color: #888888; font-size: 12px;'
-);
+);// Easter egg commands
+window.TRIADA = {
+    flag1: function() {
+        console.log('%c🚩 FLAG 1 FOUND!', 'color: #00ff00; font-size: 16px; font-weight: bold;');
+        console.log('%cTRIADA{c0ns0l3_c0wboys_4r3_th3_b3st}', 'color: #ffff00; font-size: 14px; font-family: monospace; background: #000; padding: 5px;');
+        return 'Congratulations! 1/3 flags captured.';
+    },
+    flag2: function() {
+        console.log('%c🚩 FLAG 2 FOUND!', 'color: #00ff00; font-size: 16px; font-weight: bold;');
+        console.log('%cTRIADA{HTML_c0mm3nts_t3ll_s3cr3ts}', 'color: #ffff00; font-size: 14px; font-family: monospace; background: #000; padding: 5px;');
+        return 'Excellent work! 2/3 flags captured.';
+    },
+    flag3: function() {
+        console.log('%c🚩 FLAG 3 FOUND!', 'color: #00ff00; font-size: 16px; font-weight: bold;');
+        console.log('%cTRIADA{CSS_n1nj4s_h1d3_1n_st4l3s}', 'color: #ffff00; font-size: 14px; font-family: monospace; background: #000; padding: 5px;');
+        return 'MASTER HACKER! All 3/3 flags captured!';
+    }
+};
+console.log('%c🎯 Try: TRIADA.flag1(), TRIADA.flag2(), TRIADA.flag3()', 'color: #00ff00; font-family: monospace;');

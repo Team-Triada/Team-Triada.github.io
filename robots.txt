@@ -1,15 +1,42 @@
+# Robots.txt for TRIADA - Optimized for SEO
+# https://triada.in/robots.txt
+
 User-agent: *
 Allow: /
 
+# Sitemap location
 Sitemap: https://triada.in/sitemap.xml
 
+# Crawl-delay (optional, helps prevent server overload)
+Crawl-delay: 1
 
+# Block access to admin/config files (if any)
+Disallow: /config/
+Disallow: /admin/
+Disallow: /.git/
+Disallow: /.github/
 
+# Allow all CSS, JS, and images for proper rendering
+Allow: /styles.css
+Allow: /scripts.js
+Allow: /images/
 
+# Specific bot instructions
+User-agent: Googlebot
+Allow: /
 
+User-agent: Googlebot-Image
+Allow: /images/
 
+User-agent: Bingbot
+Allow: /
 
+# Block bad bots (optional)
+User-agent: AhrefsBot
+Crawl-delay: 10
 
+User-agent: SemrushBot
+Crawl-delay: 10
 
 
 
@@ -109,16 +136,6 @@ Sitemap: https://triada.in/sitemap.xml
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-TRIADA{th4nk_y0u_4_vi51ting_0ur_w3bs1te}
+# Easter egg for security enthusiasts ;)
+# Congratulations! You found it!
+# TRIADA{r0b0ts_txt_1s_4lw4ys_th3_f1rst_pl4c3_t0_l00k}
