@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 @import url('https://fonts.cdnfonts.com/css/technos');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
 
@@ -2982,3 +2983,1519 @@ img {
         max-height: 220px;
     }
 }
+=======
+/* TRIADA - Clean Minimal Professional Design */
+/* Red, Black, White Theme - High-End Cybersecurity Aesthetic */
+
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&display=swap');
+@import url('https://fonts.cdnfonts.com/css/technos');
+
+:root {
+    /* Colors */
+    --color-red: #ff0033;
+    --color-red-dark: #cc0026;
+    --color-red-light: #ff3366;
+    --color-black: #000000;
+    --color-black-soft: #0a0a0a;
+    --color-black-accent: #1a1a1a;
+    --color-white: #ffffff;
+    --color-gray: #8a8a8a;
+    --color-gray-light: #d4d4d4;
+    --color-text-primary: #ffffff;
+    --color-text-secondary: #b3b3b3;
+
+    /* Spacing */
+    --space-xs: 0.25rem;
+    --space-sm: 0.5rem;
+    --space-md: 1rem;
+    --space-lg: 1.5rem;
+    --space-xl: 2rem;
+    --space-2xl: 3rem;
+    --space-3xl: 4rem;
+    --space-4xl: 5rem;
+
+    /* Border Radius */
+    --radius-sm: 0.375rem;
+    --radius-md: 0.75rem;
+    --radius-lg: 1rem;
+    --radius-xl: 1.5rem;
+
+    /* Shadows */
+    --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3);
+    --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.4);
+    --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.5);
+
+    /* Transitions */
+    --transition-fast: 0.15s ease;
+    --transition-normal: 0.3s ease;
+    --transition-slow: 0.5s ease;
+
+    /* Z-index */
+    --z-dropdown: 1000;
+    --z-sticky: 1020;
+    --z-fixed: 1030;
+    --z-modal: 1040;
+    --z-tooltip: 1050;
+}
+
+/* ============================================================================
+   RESET & BASE STYLES
+   ============================================================================ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--color-text-primary);
+    background: var(--color-black);
+    overflow-x: hidden;
+}
+
+/* ============================================================================
+   TYPOGRAPHY
+   ============================================================================ */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: 700;
+    line-height: 1.2;
+    color: var(--color-white);
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+h1 {
+    font-size: clamp(2.5rem, 5vw, 3.5rem);
+    font-weight: 800;
+    letter-spacing: -0.01em;
+    margin-bottom: var(--space-lg);
+    background: linear-gradient(135deg, var(--color-white) 0%, var(--color-red) 50%, var(--color-red-light) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: gradientShift 3s ease infinite;
+    background-size: 200% 200%;
+}
+
+h2 {
+    font-size: clamp(1.75rem, 4vw, 2.5rem);
+    font-weight: 700;
+    margin-bottom: var(--space-lg);
+}
+
+h3 {
+    font-size: clamp(1.25rem, 2.5vw, 1.5rem);
+    font-weight: 700;
+    margin-bottom: var(--space-md);
+}
+
+h4 {
+    font-size: 1.125rem;
+    font-weight: 600;
+    margin-bottom: var(--space-md);
+}
+
+p {
+    line-height: 1.7;
+    color: var(--color-text-secondary);
+    margin-bottom: var(--space-md);
+}
+
+a {
+    color: var(--color-red);
+    text-decoration: none;
+    transition: color var(--transition-fast);
+}
+
+a:hover {
+    color: var(--color-red-light);
+}
+
+/* ============================================================================
+   LAYOUT
+   ============================================================================ */
+
+.site-wrap {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+.container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 var(--space-xl);
+    width: 100%;
+}
+
+main {
+    padding-top: 80px;
+}
+
+/* ============================================================================
+   HEADER & NAVIGATION
+   ============================================================================ */
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: var(--z-fixed);
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    padding: var(--space-md) 0;
+    transition: all var(--transition-normal);
+}
+
+.header.scrolled {
+    background: rgba(0, 0, 0, 0.9);
+    border-bottom-color: rgba(255, 255, 255, 0.12);
+    box-shadow: var(--shadow-md);
+}
+
+.header-inner {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 var(--space-xl);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+    text-decoration: none;
+    transition: transform var(--transition-fast);
+    font-family: 'Technos', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    color: var(--color-white);
+}
+
+.brand::first-letter {
+    color: var(--color-red);
+}
+
+.main-nav {
+    display: flex;
+    align-items: center;
+    gap: var(--space-xl);
+    list-style: none;
+}
+
+.nav-link {
+    color: var(--color-text-secondary);
+    font-size: 0.95rem;
+    font-weight: 500;
+    padding: var(--space-sm) var(--space-md);
+    border-radius: var(--radius-md);
+    transition: all var(--transition-fast);
+    position: relative;
+}
+
+.nav-link:hover {
+    color: var(--color-white);
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.nav-link.is-active {
+    color: var(--color-red);
+    background: rgba(255, 0, 51, 0.1);
+}
+
+/* Hamburger Menu */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 24px;
+    height: 24px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 1001;
+}
+
+.hamburger span {
+    width: 22px;
+    height: 2px;
+    background: var(--color-white);
+    border-radius: 999px;
+    transition: all 0.3s ease;
+    transform-origin: center;
+}
+
+.hamburger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(6px, 6px);
+}
+
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(6px, -6px);
+}
+
+/* ============================================================================
+   HERO SECTION
+   ============================================================================ */
+
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    background: linear-gradient(135deg, var(--color-black) 0%, var(--color-black-accent) 100%);
+    overflow: hidden;
+    padding: var(--space-3xl) 0;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(circle at 20% 80%, rgba(255, 0, 51, 0.08) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(255, 0, 51, 0.04) 0%, transparent 50%);
+    pointer-events: none;
+}
+
+.hero-home {
+    position: relative;
+    z-index: 2;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-4xl);
+    max-width: 1200px;
+    width: 100%;
+    padding: 0 var(--space-xl);
+    align-items: center;
+    justify-items: center;
+}
+
+.hero-content {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+    order: 1;
+    width: 100%;
+    max-width: 600px;
+    justify-self: start;
+}
+
+.hero-logo {
+    order: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: var(--space-2xl);
+}
+
+.triada-logo {
+    max-width: 260px;
+    width: 100%;
+    height: auto;
+    filter: brightness(1) contrast(1.1);
+    transition: transform var(--transition-normal);
+}
+
+.triada-logo:hover {
+    transform: scale(1.05);
+}
+
+.hero-heading {
+    font-size: clamp(2.25rem, 4vw, 3rem);
+    font-weight: 800;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    margin-bottom: var(--space-md);
+    max-width: 16ch;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+.section-title {
+    font-size: clamp(1.75rem, 4vw, 2.5rem);
+    font-weight: 800;
+    margin-bottom: var(--space-lg);
+    background: linear-gradient(135deg, var(--color-white) 0%, var(--color-red) 50%, var(--color-red-light) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: gradientShift 3s ease infinite;
+    background-size: 200% 200%;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+.hero-intro {
+    font-size: 1.125rem;
+    font-weight: 300;
+    color: var(--color-text-secondary);
+    line-height: 1.8;
+    max-width: 100%;
+    animation: fadeInUp 0.8s ease-out 0.2s backwards;
+    padding: 0 var(--space-sm);
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+.hero-cta {
+    display: flex;
+    gap: var(--space-md);
+    justify-content: flex-start;
+    margin-top: var(--space-sm);
+}
+
+/* ============================================================================
+   SECTIONS
+   ============================================================================ */
+
+.section {
+    padding: var(--space-4xl) 0;
+    background: var(--color-black);
+    animation: fadeIn 0.6s ease-out;
+}
+
+.section-header {
+    margin-bottom: var(--space-3xl);
+    text-align: center;
+    animation: fadeInUp 0.6s ease-out;
+}
+
+.section-number {
+    display: block;
+    font-size: 0.75rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--color-gray);
+    margin-bottom: var(--space-md);
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+.section-subtitle {
+    font-size: 1.1rem;
+    font-weight: 400;
+    color: var(--color-red);
+    line-height: 1.7;
+    max-width: 48rem;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: var(--space-2xl);
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+/* ============================================================================
+   CARDS & GLASS EFFECT
+   ============================================================================ */
+
+.glass-card {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: var(--radius-lg);
+    padding: var(--space-xl);
+    transition: all var(--transition-normal);
+    backdrop-filter: blur(10px);
+    animation: fadeInUp 0.6s ease-out;
+}
+
+.glass-card:hover {
+    background: rgba(255, 255, 255, 0.06);
+    border-color: rgba(255, 0, 51, 0.3);
+    transform: translateY(-8px);
+    box-shadow: 0 12px 32px rgba(255, 0, 51, 0.15);
+}
+
+/* ============================================================================
+   GRID LAYOUTS
+   ============================================================================ */
+
+.grid {
+    display: grid;
+    gap: var(--space-xl);
+}
+
+.grid-2 {
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+}
+
+.grid-3 {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+.grid-4 {
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+/* ============================================================================
+   ACHIEVEMENT CARDS (Winners Grid)
+   ============================================================================ */
+
+.winners-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-xl);
+}
+
+.winner-card {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-lg);
+    padding: var(--space-xl);
+    background: rgba(255, 255, 255, 0.02);
+    border: 2px solid transparent;
+    border-radius: var(--radius-xl);
+    background-clip: padding-box;
+    position: relative;
+    /* Use specific properties, hardware-accelerate transforms for smooth motion */
+    transition: transform 420ms cubic-bezier(.2, .9, .2, 1), box-shadow 360ms cubic-bezier(.2, .9, .2, 1);
+    will-change: transform, box-shadow;
+    overflow: hidden;
+}
+
+.winner-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    padding: 2px;
+    /* Gradient border from dark red (top-right) to black (bottom-left) */
+    background: linear-gradient(to bottom left, var(--color-red-dark) 0%, var(--color-black-soft) 100%);
+    border-radius: var(--radius-xl);
+    z-index: -1;
+    /* Prepare for smooth hover transform and optional shimmer */
+    transform: scale(1);
+    transform-origin: center;
+    transition: transform 420ms cubic-bezier(.2, .9, .2, 1), opacity 300ms ease;
+    background-size: 200% 200%;
+}
+
+.winner-card::after {
+    content: '';
+    position: absolute;
+    inset: 2px;
+    background: var(--color-black-soft);
+    border-radius: calc(var(--radius-xl) - 2px);
+    z-index: -1;
+    transition: transform 420ms cubic-bezier(.2, .9, .2, 1), background-color 360ms ease;
+}
+
+.winner-card:hover {
+    transform: translateY(-10px) translateZ(0);
+    box-shadow: 0 18px 44px rgba(255, 0, 51, 0.18);
+}
+
+.winner-card:hover::before {
+    /* Slightly grow the gradient border and enable a subtle animated shift */
+    transform: scale(1.04);
+    /* start animated gradient shimmer on hover for visual polish */
+    animation: gradientShift 2.8s linear infinite;
+}
+
+.winner-card:hover::after {
+    transform: scale(0.996);
+}
+
+.winner-rank {
+    font-size: 0.875rem;
+    font-weight: 800;
+    color: var(--color-red);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+.winner-info h3 {
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: var(--space-md);
+    color: var(--color-white);
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+.winner-info p {
+    font-size: 0.95rem;
+    font-weight: 400;
+    line-height: 1.8;
+    color: var(--color-text-secondary);
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+/* ============================================================================
+   TEAM SECTION
+   ============================================================================ */
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: var(--space-2xl);
+    justify-items: center;
+}
+
+.team-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-lg);
+    text-align: center;
+    width: 100%;
+    max-width: 340px;
+    padding: var(--space-lg);
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: var(--radius-lg);
+    transition: all var(--transition-normal);
+}
+
+.team-card:hover {
+    background: rgba(255, 255, 255, 0.06);
+    border-color: rgba(255, 0, 51, 0.3);
+    transform: translateY(-8px);
+    box-shadow: 0 12px 32px rgba(255, 0, 51, 0.15);
+}
+
+.team-photo {
+    width: 100%;
+    max-width: 260px;
+    aspect-ratio: 3 / 4;
+    object-fit: cover;
+    object-position: center;
+    border-radius: var(--radius-md);
+    margin-bottom: var(--space-sm);
+    flex-shrink: 0;
+}
+
+.team-info {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+    align-items: center;
+    width: 100%;
+}
+
+.team-role {
+    font-size: 0.875rem;
+    color: var(--color-red);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    background: rgba(255, 0, 51, 0.1);
+    padding: var(--space-xs) var(--space-sm);
+    border-radius: var(--radius-sm);
+    font-family: 'JetBrains Mono', monospace;
+}
+
+.team-name {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--color-white);
+    margin: 0;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+.team-alias {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.9rem;
+    color: var(--color-red);
+    font-weight: 500;
+}
+
+.team-social {
+    display: flex;
+    gap: var(--space-md);
+    margin-top: var(--space-sm);
+    justify-content: center;
+}
+
+.social-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: var(--radius-md);
+    color: var(--color-text-secondary);
+    text-decoration: none;
+    transition: all var(--transition-fast);
+    font-size: 1.3rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.social-link:hover {
+    background: rgba(255, 0, 51, 0.1);
+    color: var(--color-red);
+    transform: translateY(-2px);
+    border-color: var(--color-red);
+}
+
+/* ============================================================================
+   BUTTONS
+   ============================================================================ */
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--space-md) var(--space-xl);
+    font-size: 0.95rem;
+    font-weight: 600;
+    border-radius: var(--radius-md);
+    border: none;
+    cursor: pointer;
+    transition: all var(--transition-normal);
+    text-decoration: none;
+    gap: var(--space-sm);
+    position: relative;
+    overflow: hidden;
+}
+
+.btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.2);
+    transition: left var(--transition-normal);
+    z-index: -1;
+}
+
+.btn:hover::before {
+    left: 100%;
+}
+
+.btn-primary {
+    background: var(--color-red);
+    color: var(--color-white);
+    box-shadow: 0 4px 15px rgba(255, 0, 51, 0.2);
+}
+
+.btn-primary:hover {
+    background: var(--color-red-dark);
+    transform: translateY(-3px);
+    box-shadow: 0 12px 30px rgba(255, 0, 51, 0.4);
+}
+
+.btn-secondary {
+    background: transparent;
+    color: var(--color-white);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.btn-secondary:hover {
+    background: rgba(255, 0, 51, 0.1);
+    border-color: var(--color-red);
+    color: var(--color-red);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(255, 0, 51, 0.2);
+}
+
+/* ============================================================================
+   FOOTER
+   ============================================================================ */
+
+.footer {
+    background: #050505;
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+    padding: var(--space-md) 0;
+    margin-top: var(--space-3xl);
+}
+
+.footer-content {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 var(--space-xl);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: var(--space-md);
+}
+
+.footer-left {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xs);
+}
+
+.footer-logo {
+    font-family: 'Technos', sans-serif;
+    font-size: 1.25rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    color: var(--color-white);
+}
+
+.footer-logo::first-letter {
+    color: var(--color-red);
+}
+
+.footer-copyright {
+    font-size: 0.8rem;
+    color: var(--color-gray);
+}
+
+.footer-links {
+    display: flex;
+    gap: var(--space-md);
+    justify-content: center;
+}
+
+.footer-links a {
+    color: var(--color-text-secondary);
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color var(--transition-fast);
+}
+
+.footer-links a:hover {
+    color: var(--color-red);
+}
+
+.social-links-footer {
+    display: flex;
+    gap: var(--space-sm);
+    justify-content: flex-end;
+}
+
+.social-icon-footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 34px;
+    height: 34px;
+    background: rgba(255, 255, 255, 0.04);
+    border-radius: var(--radius-md);
+    color: var(--color-text-secondary);
+    text-decoration: none;
+    transition: all var(--transition-fast);
+    font-size: 1.1rem;
+}
+
+.social-icon-footer:hover {
+    background: rgba(255, 0, 51, 0.1);
+    color: var(--color-red);
+    transform: translateY(-2px);
+}
+
+/* ============================================================================
+   ANIMATIONS
+   ============================================================================ */
+
+@keyframes gradientShift {
+
+    0%,
+    100% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes scaleIn {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.animate-fade-in {
+    animation: fadeIn 0.6s ease-out;
+}
+
+.animate-fade-in-up {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+.animate-scale-in {
+    animation: scaleIn 0.6s ease-out;
+}
+
+/* Respect user's reduced motion preference: disable non-essential animations/transitions */
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation: none !important;
+        transition: none !important;
+    }
+
+    .winner-card,
+    .glass-card,
+    .team-card,
+    .btn,
+    .hero-intro,
+    .hero-heading {
+        transform: none !important;
+        box-shadow: none !important;
+    }
+}
+
+/* ============================================================================
+   RESPONSIVE DESIGN
+   ============================================================================ */
+
+/* Tablet Landscape (768px - 1023px) */
+@media (min-width: 768px) and (max-width: 1023px) {
+    .header-inner {
+        padding: 0 var(--space-lg);
+    }
+
+    .container {
+        padding: 0 var(--space-lg);
+    }
+
+    .hero {
+        min-height: 85vh;
+        padding: var(--space-2xl) 0;
+    }
+
+    .hero-home {
+        grid-template-columns: 1fr;
+        gap: var(--space-2xl);
+        padding: 0 var(--space-lg);
+    }
+
+    .hero-content {
+        order: 2;
+        text-align: center;
+        max-width: 100%;
+    }
+
+    .hero-logo {
+        order: 1;
+        margin-bottom: var(--space-lg);
+    }
+
+    .triada-logo {
+        max-width: 250px;
+    }
+
+    .team-grid {
+        grid-template-columns: repeat(2, minmax(220px, 1fr));
+        gap: var(--space-xl);
+    }
+
+    .winners-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--space-lg);
+    }
+
+    .section {
+        padding: var(--space-3xl) 0;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        gap: var(--space-lg);
+        text-align: center;
+    }
+
+    .footer-links {
+        flex-wrap: wrap;
+    }
+
+    .social-links-footer {
+        justify-content: center;
+    }
+}
+
+/* Tablet Portrait (600px - 767px) */
+@media (min-width: 600px) and (max-width: 767px) {
+    .header-inner {
+        padding: 0 var(--space-lg);
+    }
+
+    .container {
+        padding: 0 var(--space-lg);
+    }
+
+    main {
+        padding-top: 70px;
+    }
+
+    .hero {
+        min-height: 80vh;
+        padding: var(--space-xl) 0;
+    }
+
+    .hero-home {
+        grid-template-columns: 1fr;
+        gap: var(--space-2xl);
+        padding: 0 var(--space-lg);
+        align-items: center;
+    }
+
+    .hero-content {
+        order: 2;
+        text-align: center;
+        max-width: 100%;
+        align-items: center;
+    }
+
+    .hero-logo {
+        order: 1;
+        margin-bottom: var(--space-lg);
+        justify-content: center;
+    }
+
+    .hero-heading {
+        font-size: 2.5rem;
+    }
+
+    .hero-intro {
+        font-size: 1.1rem;
+    }
+
+    .hero-cta {
+        justify-content: center;
+    }
+
+    .triada-logo {
+        max-width: 200px;
+    }
+
+    .team-grid {
+        grid-template-columns: repeat(2, minmax(200px, 1fr));
+        gap: var(--space-lg);
+    }
+
+    .winners-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .section {
+        padding: var(--space-2xl) 0;
+    }
+
+    .btn {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .hero-cta {
+        flex-direction: column;
+        gap: var(--space-md);
+    }
+
+    .social-links-home {
+        justify-content: center;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        gap: var(--space-md);
+        text-align: center;
+        padding: 0 var(--space-lg);
+    }
+
+    .footer-links {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .social-links-footer {
+        justify-content: center;
+    }
+}
+
+/* Mobile Large (480px - 599px) */
+@media (min-width: 480px) and (max-width: 599px) {
+    .header-inner {
+        padding: 0 var(--space-lg);
+    }
+
+    .container {
+        padding: 0 var(--space-lg);
+    }
+
+    main {
+        padding-top: 70px;
+    }
+
+    .hero {
+        min-height: 80vh;
+        padding: var(--space-xl) 0;
+    }
+
+    .hero-home {
+        grid-template-columns: 1fr;
+        gap: var(--space-xl);
+        padding: 0 var(--space-md);
+        align-items: center;
+    }
+
+    .hero-content {
+        order: 2;
+        text-align: center;
+        max-width: 100%;
+        padding: var(--space-lg) var(--space-md);
+        border-radius: var(--radius-lg);
+        background: rgba(10, 10, 10, 0.96);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        align-items: center;
+    }
+
+    .hero-logo {
+        order: 1;
+        margin-bottom: var(--space-lg);
+        justify-content: center;
+    }
+
+    .triada-logo {
+        max-width: 190px;
+        width: 100%;
+        height: auto;
+        filter: brightness(1.05) contrast(1.15);
+    }
+
+    .hero-heading {
+        font-size: 2.1rem;
+    }
+
+    .hero-intro {
+        font-size: 1rem;
+    }
+
+    .team-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: var(--space-lg);
+    }
+
+    .winners-grid {
+        grid-template-columns: 1fr;
+        gap: var(--space-md);
+    }
+
+    .section {
+        padding: var(--space-xl) 0;
+    }
+
+    .btn {
+        width: auto;
+        min-width: 160px;
+        padding: var(--space-md) var(--space-lg);
+        font-size: 0.9rem;
+    }
+
+    .hero-cta {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: var(--space-sm);
+    }
+
+    .social-links-home {
+        justify-content: center;
+    }
+
+    .social-links-home {
+        justify-content: center;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        gap: var(--space-md);
+        text-align: center;
+        padding: 0 var(--space-md);
+    }
+
+    .footer-links {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .social-links-footer {
+        justify-content: center;
+    }
+}
+
+/* Mobile Small (320px - 479px) */
+@media (max-width: 479px) {
+    :root {
+        --space-xs: 0.125rem;
+        --space-sm: 0.375rem;
+        --space-md: 0.75rem;
+        --space-lg: 1rem;
+        --space-xl: 1.5rem;
+        --space-2xl: 2rem;
+        --space-3xl: 2.5rem;
+        --space-4xl: 3rem;
+    }
+
+    body {
+        font-size: 14px;
+        line-height: 1.5;
+    }
+
+    .header-inner {
+        padding: 0 var(--space-md);
+    }
+
+    .container {
+        padding: 0 var(--space-md);
+    }
+
+    .brand {
+        font-size: 1.25rem;
+    }
+
+    main {
+        padding-top: 70px;
+    }
+
+    .hero {
+        min-height: 75vh;
+        padding: var(--space-xl) 0 var(--space-lg);
+    }
+
+    .hero-home {
+        grid-template-columns: 1fr;
+        gap: var(--space-lg);
+        padding: 0 var(--space-sm);
+        align-items: center;
+    }
+
+    .hero-content {
+        order: 2;
+        padding: var(--space-lg) var(--space-md);
+        border-radius: var(--radius-lg);
+        background: rgba(10, 10, 10, 0.96);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        text-align: center;
+        align-items: center;
+    }
+
+    .hero-logo {
+        order: 1;
+        margin-bottom: var(--space-lg);
+        justify-content: center;
+    }
+
+    .triada-logo {
+        max-width: 160px;
+        width: 100%;
+        height: auto;
+        filter: brightness(1.05) contrast(1.15);
+    }
+
+    .hero-heading {
+        font-size: 1.7rem;
+        margin-bottom: var(--space-sm);
+    }
+
+    .hero-intro {
+        font-size: 0.9rem;
+        line-height: 1.6;
+    }
+
+    .hero-cta {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: var(--space-xs);
+        margin-top: var(--space-sm);
+    }
+
+    .btn {
+        width: auto;
+        min-width: 150px;
+        padding: var(--space-sm) var(--space-md);
+        font-size: 0.85rem;
+    }
+
+    .team-grid {
+        grid-template-columns: 1fr;
+        gap: var(--space-lg);
+    }
+
+    .winners-grid {
+        grid-template-columns: 1fr;
+        gap: var(--space-md);
+    }
+
+    .team-card {
+        padding: var(--space-md);
+        max-width: 100%;
+    }
+
+    .team-photo {
+        max-width: 260px;
+        width: 100%;
+    }
+
+    .section {
+        padding: var(--space-lg) 0;
+    }
+
+    .section-header {
+        margin-bottom: var(--space-lg);
+    }
+
+    h1 {
+        font-size: 1.5rem;
+        margin-bottom: var(--space-sm);
+    }
+
+    h2 {
+        font-size: 1.25rem;
+        margin-bottom: var(--space-sm);
+    }
+
+    h3 {
+        font-size: 1.1rem;
+        margin-bottom: var(--space-sm);
+    }
+
+    .social-links-home {
+        justify-content: center;
+    }
+
+    .social-links-home {
+        justify-content: center;
+    }
+
+    .footer {
+        padding: var(--space-md) 0;
+        margin-top: var(--space-2xl);
+    }
+
+    .footer-content {
+        flex-direction: column;
+        gap: var(--space-sm);
+        text-align: center;
+        padding: 0 var(--space-sm);
+    }
+
+    .footer-links {
+        flex-direction: column;
+        gap: var(--space-sm);
+        justify-content: center;
+    }
+
+    .footer-links a {
+        font-size: 0.85rem;
+    }
+
+    .social-links-footer {
+        justify-content: center;
+        gap: var(--space-sm);
+    }
+}
+
+/* Mobile Navigation Responsive */
+@media (max-width: 767px) {
+    .hamburger {
+        display: flex;
+    }
+
+    .main-nav {
+        display: flex;
+        position: fixed;
+        top: 64px;
+        right: var(--space-md);
+        left: var(--space-md);
+        background: rgba(10, 10, 10, 0.98);
+        border-radius: var(--radius-lg);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: stretch;
+        gap: var(--space-sm);
+        transform: translateY(-16px);
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.2s ease, transform 0.2s ease;
+        z-index: 1000;
+        padding: var(--space-md);
+    }
+
+    .main-nav.active {
+        transform: translateY(0);
+        opacity: 1;
+        pointer-events: auto;
+    }
+
+    .nav-link {
+        font-size: 0.95rem;
+        padding: var(--space-md) var(--space-md);
+        border-radius: var(--radius-md);
+        text-align: left;
+    }
+}
+
+/* Touch Device Optimizations */
+@media (hover: none) and (pointer: coarse) {
+
+    .btn:hover,
+    .social-link:hover,
+    .social-icon-footer:hover,
+    .nav-link:hover,
+    .glass-card:hover,
+    .team-card:hover {
+        transform: none;
+        box-shadow: none;
+    }
+
+    .btn:active,
+    .social-link:active,
+    .social-icon-footer:active,
+    .nav-link:active {
+        transform: scale(0.98);
+        transition: transform 0.1s ease;
+    }
+
+    .glass-card:active,
+    .team-card:active {
+        transform: scale(0.99);
+        transition: transform 0.1s ease;
+    }
+}
+
+/* High DPI Displays */
+@media (-webkit-min-device-pixel-ratio: 2),
+(min-resolution: 192dpi) {
+    .hero::before {
+        background:
+            radial-gradient(circle at 20% 80%, rgba(255, 0, 51, 0.12) 0%, transparent 50%),
+            radial-gradient(circle at 80% 20%, rgba(255, 0, 51, 0.06) 0%, transparent 50%);
+    }
+
+    .triada-logo {
+        image-rendering: -webkit-optimize-contrast;
+        image-rendering: crisp-edges;
+    }
+}
+
+/* Print Styles */
+@media print {
+
+    .header,
+    .footer,
+    .hero-cta {
+        display: none !important;
+    }
+
+    .section {
+        page-break-inside: avoid;
+    }
+
+    .glass-card,
+    .team-card {
+        background: white;
+        border: 1px solid #ccc;
+        box-shadow: none;
+        break-inside: avoid;
+    }
+}
+
+/* Home Page Social Icons */
+.social-links-home {
+    display: flex;
+    gap: var(--space-md);
+    justify-content: flex-start;
+    margin: var(--space-md) 0;
+    flex-wrap: wrap;
+}
+
+.social-icon-home {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1.5px solid rgba(255, 255, 255, 0.15);
+    border-radius: var(--radius-lg);
+    color: var(--color-text-secondary);
+    text-decoration: none;
+    transition: all var(--transition-normal);
+    font-size: 1.25rem;
+}
+
+.social-icon-home:hover {
+    background: rgba(255, 0, 51, 0.15);
+    color: var(--color-red);
+    transform: translateY(-2px);
+    border-color: var(--color-red);
+    box-shadow: 0 4px 12px rgba(255, 0, 51, 0.2);
+}
+
+.social-icon-home img {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+}
+
+/* Utility Classes */
+.text-center {
+    text-align: center;
+}
+
+.text-left {
+    text-align: left;
+}
+
+.mb-0 {
+    margin-bottom: 0;
+}
+
+.mt-2xl {
+    margin-top: var(--space-2xl);
+}
+
+.gap-xl {
+    gap: var(--space-xl);
+}
+>>>>>>> 28f0315 (updated)
