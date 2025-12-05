@@ -55,7 +55,7 @@
 
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="images/favicon.png">
-    <link rel="manifest" href="site.webmanifest">
+
 
     <!-- Styles -->
     <link rel="stylesheet" href="styles.css">
@@ -92,7 +92,7 @@
                 </div>
 
                 <div class="team-grid">
-                    <div class="team-card">
+                    <div class="team-card" data-member="adarsh" style="cursor: pointer;">
                         <img src="images/Adarsh_triada.png" alt="Adarsh SR" class="team-photo">
                         <div class="team-info">
                             <div class="team-role">Team Lead</div>
@@ -110,7 +110,7 @@
                     </div>
 
 
-                    <div class="team-card">
+                    <div class="team-card" data-member="likith" style="cursor: pointer;">
                         <img src="images/likith_triada.jpg" alt="Likith A" class="team-photo">
                         <div class="team-info">
                             <div class="team-role">Team Member</div>
@@ -126,7 +126,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="team-card">
+                    <div class="team-card" data-member="assad" style="cursor: pointer;">
                         <img src="images/assad_triada.jpg" alt="Md Assad" class="team-photo">
                         <div class="team-info">
                             <div class="team-role">Team Member</div>
@@ -143,7 +143,7 @@
                         </div>
                     </div>
 
-                    <div class="team-card">
+                    <div class="team-card" data-member="hridhik" style="cursor: pointer;">
                         <img src="images/hridhik_triada.png" alt="Hridhik S" class="team-photo">
                         <div class="team-info">
                             <div class="team-role">Team Member</div>
@@ -160,7 +160,7 @@
                         </div>
                     </div>
 
-                    <div class="team-card">
+                    <div class="team-card" data-member="abhinav" style="cursor: pointer;">
                         <img src="images/abhinav_triada.jpg" alt="Abhinav S" class="team-photo">
                         <div class="team-info">
                             <div class="team-role">Team Member</div>
@@ -176,7 +176,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="team-card">
+                    <div class="team-card" data-member="aron" style="cursor: pointer;">
                         <img src="images/aron_triada.jpg" alt="Aron" class="team-photo">
                         <div class="team-info">
                             <div class="team-role">Team Member</div>
@@ -192,7 +192,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="team-card">
+                    <div class="team-card" data-member="bhavy" style="cursor: pointer;">
                         <img src="images/bhavy_triada.jpg" alt="Bhavya" class="team-photo">
                         <div class="team-info">
                             <div class="team-role">Team Member</div>
@@ -247,7 +247,45 @@
         </div>
     </footer>
 
+    <!-- Team Member Modal -->
+    <div id="memberModal" class="modal">
+        <div class="modal-overlay"></div>
+        <div class="modal-content">
+            <button class="modal-close" aria-label="Close modal">
+                <i data-lucide="x"></i>
+            </button>
+            <div class="modal-body">
+                <div class="modal-left">
+                    <img id="modalImage" src="" alt="" class="modal-image">
+                    <div class="modal-social">
+                        <a id="modalLinkedin" href="#" class="modal-social-link" title="LinkedIn" target="_blank"
+                            rel="noopener"><i data-lucide="linkedin"></i></a>
+                        <a id="modalGithub" href="#" class="modal-social-link" title="GitHub" target="_blank"
+                            rel="noopener"><i data-lucide="github"></i></a>
+                        <a id="modalPortfolio" href="#" class="modal-social-link" title="Portfolio" target="_blank"
+                            rel="noopener"><i data-lucide="globe"></i></a>
+                    </div>
+                </div>
+                <div class="modal-right">
+                    <div class="modal-header">
+                        <div class="modal-role" id="modalRole">Team Lead</div>
+                        <h3 class="modal-name" id="modalName">Member Name</h3>
+                        <div class="modal-alias" id="modalAlias">alias</div>
+                    </div>
+                    <div class="modal-about">
+                        <h4>About Me</h4>
+                        <p id="modalAbout"></p>
+                    </div>
+                    <div class="modal-badge">
+                        <iframe id="modalBadge" src="" style="border:none; width: 100%; height: 120px;"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <script src="scripts.js"></script>
+    <script src="team-modal.js"></script>
     <script>
         lucide.createIcons();
     </script>

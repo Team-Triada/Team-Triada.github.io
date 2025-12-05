@@ -54,7 +54,7 @@
 
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="images/favicon.png">
-    <link rel="manifest" href="site.webmanifest">
+
 
     <!-- Styles -->
     <link rel="stylesheet" href="styles.css">
@@ -105,70 +105,86 @@
 
         <section class="section">
             <div class="container">
-                <div class="glass-card">
+                <!-- Centered Header -->
+                <div style="text-align: center; max-width: 800px; margin: 0 auto var(--space-3xl) auto;">
                     <h2 style="color: var(--color-red); margin-bottom: var(--space-lg); font-weight: 800;">We Want
                         Specialists</h2>
-                    <p style="margin-bottom: var(--space-lg); font-weight: 500; color: var(--color-text-secondary);">
+                    <p style="font-weight: 500; color: var(--color-text-secondary); font-size: 1.1rem;">
                         If you're experienced in any one of these domains, you already stand out:
                     </p>
+                </div>
 
-                    <div class="grid grid-2" style="gap: var(--space-lg); margin-bottom: var(--space-xl);">
-                        <div>
-                            <h3 style="color: var(--color-red); margin-bottom: var(--space-md); font-weight: 700;"><i
-                                    class="fas fa-lock" style="margin-right: var(--space-sm);"></i>Web Exploitation</h3>
-                            <p
-                                style="font-size: 0.9rem; margin-bottom: var(--space-md); font-weight: 400; color: var(--color-text-secondary);">
-                                Break logic. Bend inputs. Own
-                                the app.<br><em style="font-style: italic; font-weight: 500;">(SQLi, XSS, SSRF, IDOR,
-                                    OAuth abuse, business logic)</em></p>
+                <!-- Specializations Grid -->
+                <div class="specialists-grid" style="gap: var(--space-xl);">
+                    <!-- Web Exploitation -->
+                    <div class="glass-card">
+                        <h3 style="color: var(--color-red); margin-bottom: var(--space-md); font-weight: 700;"><i
+                                class="" style="margin-right: var(--space-sm);"></i>Web Exploitation</h3>
+                        <p style="font-size: 0.9rem; font-weight: 400; color: var(--color-text-secondary);">
+                            Break logic. Bend inputs. Own the app.<br><em
+                                style="font-style: italic; font-weight: 500;">(SQLi,
+                                XSS, SSRF, IDOR,
+                                OAuth abuse, business logic)</em></p>
+                    </div>
 
-                            <h3 style="color: var(--color-red); margin-bottom: var(--space-sm); font-weight: 700;"><i
-                                    class="fas fa-bomb" style="margin-right: var(--space-sm);"></i>Binary/Pwn</h3>
-                            <p
-                                style="font-size: 0.9rem; margin-bottom: var(--space-md); font-weight: 400; color: var(--color-text-secondary);">
-                                Understand memory like a
-                                weapon.<br><em style="font-style: italic; font-weight: 500;">(ROP, heap, stack smashing,
-                                    exploitation pipelines)</em></p>
+                    <!-- Binary/Pwn -->
+                    <div class="glass-card">
+                        <h3 style="color: var(--color-red); margin-bottom: var(--space-md); font-weight: 700;"><i
+                                class="" style="margin-right: var(--space-sm);"></i>Binary/Pwn</h3>
+                        <p style="font-size: 0.9rem; font-weight: 400; color: var(--color-text-secondary);">
+                            Understand memory like a weapon.<br><em style="font-style: italic; font-weight: 500;">(ROP,
+                                heap,
+                                stack smashing,
+                                exploitation pipelines)</em></p>
+                    </div>
 
-                            <h3 style="color: var(--color-red); margin-bottom: var(--space-sm); font-weight: 700;"><i
-                                    class="fas fa-dna" style="margin-right: var(--space-sm);"></i>Reverse Engineering
-                            </h3>
-                            <p
-                                style="font-size: 0.9rem; margin-bottom: var(--space-md); font-weight: 400; color: var(--color-text-secondary);">
-                                Peel binaries apart and
-                                rebuild their secrets.<br><em style="font-style: italic; font-weight: 500;">(Static
-                                    analysis, dynamic tracing, crackmes, Android,
-                                    firmware)</em></p>
-                        </div>
-                        <div>
-                            <h3 style="color: var(--color-red); margin-bottom: var(--space-sm); font-weight: 700;"><i
-                                    class="fas fa-shield-alt" style="margin-right: var(--space-sm);"></i>Forensics /
-                                Malware / DFIR</h3>
-                            <p
-                                style="font-size: 0.9rem; margin-bottom: var(--space-md); font-weight: 400; color: var(--color-text-secondary);">
-                                Find the signal in the
-                                noise.<br><em style="font-style: italic; font-weight: 500;">(Packet forensics, malware
-                                    triage, IR workflows)</em></p>
+                    <!-- Reverse Engineering -->
+                    <div class="glass-card">
+                        <h3 style="color: var(--color-red); margin-bottom: var(--space-md); font-weight: 700;"><i
+                                class="" style="margin-right: var(--space-sm);"></i>Reverse Engineering
+                        </h3>
+                        <p style="font-size: 0.9rem; font-weight: 400; color: var(--color-text-secondary);">
+                            Peel binaries apart and rebuild their secrets.<br><em
+                                style="font-style: italic; font-weight: 500;">(Static
+                                analysis, dynamic tracing, crackmes, Android,
+                                firmware)</em></p>
+                    </div>
 
-                            <h3 style="color: var(--color-red); margin-bottom: var(--space-sm); font-weight: 700;"><i
-                                    class="fas fa-search" style="margin-right: var(--space-sm);"></i>OSINT / Recon</h3>
-                            <p
-                                style="font-size: 0.9rem; margin-bottom: var(--space-md); font-weight: 400; color: var(--color-text-secondary);">
-                                See everything. Miss
-                                nothing.<br><em style="font-style: italic; font-weight: 500;">(Open-source intelligence,
-                                    profiling, pivoting)</em></p>
+                    <!-- Forensics / Malware / DFIR -->
+                    <div class="glass-card">
+                        <h3 style="color: var(--color-red); margin-bottom: var(--space-md); font-weight: 700;"><i
+                                class="" style="margin-right: var(--space-sm);"></i>Forensics /
+                            Malware / DFIR</h3>
+                        <p style="font-size: 0.9rem; font-weight: 400; color: var(--color-text-secondary);">
+                            Find the signal in the noise.<br><em style="font-style: italic; font-weight: 500;">(Packet
+                                forensics, malware
+                                triage, IR workflows)</em></p>
+                    </div>
 
-                            <h3 style="color: var(--color-red); margin-bottom: var(--space-sm); font-weight: 700;"><i
-                                    class="fas fa-microchip" style="margin-right: var(--space-sm);"></i>Hardware / IoT
-                                Security</h3>
-                            <p style="font-size: 0.9rem; font-weight: 400; color: var(--color-text-secondary);">Make
-                                devices talk — and tell the truth.<br><em
-                                    style="font-style: italic; font-weight: 500;">(Firmware
-                                    dumping, ESP32/MCU hacking, RF/802.11 analysis)</em></p>
-                        </div>
+                    <!-- OSINT / Recon -->
+                    <div class="glass-card">
+                        <h3 style="color: var(--color-red); margin-bottom: var(--space-md); font-weight: 700;"><i
+                                class="" style="margin-right: var(--space-sm);"></i>OSINT / Recon</h3>
+                        <p style="font-size: 0.9rem; font-weight: 400; color: var(--color-text-secondary);">
+                            See everything. Miss nothing.<br><em
+                                style="font-style: italic; font-weight: 500;">(Open-source
+                                intelligence,
+                                profiling, pivoting)</em></p>
+                    </div>
+
+                    <!-- Hardware / IoT Security -->
+                    <div class="glass-card">
+                        <h3 style="color: var(--color-red); margin-bottom: var(--space-md); font-weight: 700;"><i
+                                class="" style="margin-right: var(--space-sm);"></i>Hardware / IoT
+                            Security</h3>
+                        <p style="font-size: 0.9rem; font-weight: 400; color: var(--color-text-secondary);">Make
+                            devices talk — and tell the truth.<br><em
+                                style="font-style: italic; font-weight: 500;">(Firmware
+                                dumping, ESP32/MCU hacking, RF/802.11 analysis)</em></p>
                     </div>
                 </div>
             </div>
+        </section>
         </section>
 
         <section class="section section-dark">

@@ -354,19 +354,8 @@ function initPerformanceOptimizations() {
         }, 10);
     });
 
-    // Preload critical resources
-    const criticalImages = [
-        'images/logo.svg',
-        'images/favicon.png'
-    ];
-
-    criticalImages.forEach(src => {
-        const link = document.createElement('link');
-        link.rel = 'preload';
-        link.as = 'image';
-        link.href = src;
-        document.head.appendChild(link);
-    });
+    // Preload critical resources removed to prevent console warnings in local development
+    // Resources will load normally through standard HTML tags
 }
 
 // Card hover effects
@@ -556,27 +545,25 @@ window.addEventListener('orientationchange', setViewportHeight);
 console.log(`
 %cTRIADA
 %cIndia's Top 1% Cybersecurity CTF Team
-%cBuilt with modern web technologies and passion for security
 `,
     'color: #ff0033; font-size: 24px; font-weight: bold;',
-    'color: #ffffff; font-size: 14px;',
-    'color: #888888; font-size: 12px;'
+    'color: #ffffff; font-size: 14px;'
 );// Easter egg commands
 window.TRIADA = {
-    flag1: function() {
+    flag1: function () {
         console.log('%c🚩 FLAG 1 FOUND!', 'color: #00ff00; font-size: 16px; font-weight: bold;');
         console.log('%cTRIADA{c0ns0l3_c0wboys_4r3_th3_b3st}', 'color: #ffff00; font-size: 14px; font-family: monospace; background: #000; padding: 5px;');
         return 'Congratulations! 1/3 flags captured.';
     },
-    flag2: function() {
+    flag2: function () {
         console.log('%c🚩 FLAG 2 FOUND!', 'color: #00ff00; font-size: 16px; font-weight: bold;');
         console.log('%cTRIADA{HTML_c0mm3nts_t3ll_s3cr3ts}', 'color: #ffff00; font-size: 14px; font-family: monospace; background: #000; padding: 5px;');
         return 'Excellent work! 2/3 flags captured.';
     },
-    flag3: function() {
+    flag3: function () {
         console.log('%c🚩 FLAG 3 FOUND!', 'color: #00ff00; font-size: 16px; font-weight: bold;');
         console.log('%cTRIADA{CSS_n1nj4s_h1d3_1n_st4l3s}', 'color: #ffff00; font-size: 14px; font-family: monospace; background: #000; padding: 5px;');
         return 'MASTER HACKER! All 3/3 flags captured!';
     }
 };
-console.log('%c🎯 Try: TRIADA.flag1(), TRIADA.flag2(), TRIADA.flag3()', 'color: #00ff00; font-family: monospace;');
+console.log('%cTry: TRIADA.flag1(), TRIADA.flag2(), TRIADA.flag3()', 'color: #00ff00; font-family: monospace;');
