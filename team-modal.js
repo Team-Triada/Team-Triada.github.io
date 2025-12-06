@@ -24,7 +24,7 @@ const teamMembers = {
         linkedin: 'https://www.linkedin.com/in/likith-a-161564293/',
         github: 'https://github.com/bytesbylikith',
         portfolio: 'https://likith.triada.in',
-        thm: '#'
+        thm: 'https://tryhackme.com/api/v2/badges/public-profile?userPublicId=5220891'
     },
 
     assad: {
@@ -34,7 +34,7 @@ const teamMembers = {
         image: 'images/assad_triada.jpg',
         about: "I'm a cybersecurity student and a core member of Team Triada, contributing as a CTF player, challenge developer, and someone who helps the team handle operations during events and platform work. I consistently compete in CTFs, with a focus on cryptography, steganography, and applied security practice. I contribute to the cybersec community by publishing crypto- and stego-based tools, and by building IoT security projects to deepen my understanding of wireless and embedded-device security. I stay active through Vulcon, Seaside, BSides Bangalore, and regular NULL meetups to keep learning and growing. Outside cybersec, I'm a trained fighter in Muay Thai, Brazilian Jiu-Jitsu, and kickboxing, which strengthens my focus, discipline, and ability to perform under pressure.",
         linkedin: 'https://www.linkedin.com/in/asd-assad-632676308/',
-        github: 'https://github.com/Smallkidmeonly',
+        github: 'https://github.com/Ro0tk1e',
         portfolio: 'https://assad.triada.in',
         thm: 'https://tryhackme.com/api/v2/badges/public-profile?userPublicId=3908231'
     },
