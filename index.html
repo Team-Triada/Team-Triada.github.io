@@ -26,7 +26,7 @@
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-XMQ0EW6G7W"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
+        function gtag() { dataLayer.push(arguments); }
         gtag('js', new Date());
 
         gtag('config', 'G-XMQ0EW6G7W');
@@ -88,10 +88,16 @@
 
     <!-- Styles -->
     <link rel="stylesheet" href="styles.css">
+
+    <!-- GSAP for Animations -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+
 </head>
 
 <body>
+    <div id="dot-grid-container"></div>
     <header class="header" id="header">
+
         <div class="header-inner">
             <a href="index.html" class="footer-logo"><span class="triada-red">T</span><span
                     class="triada-white">riada</span></a>
@@ -107,6 +113,7 @@
                 <a href="https://ctf.triada.in" target="_blank" class="nav-link">CTF</a>
                 <a href="https://labs.triada.in" target="_blank" rel="noopener" class="nav-link">TRIADA Labs</a>
                 <a href="join.html" class="nav-link">Join Us</a>
+
             </nav>
         </div>
     </header>
@@ -179,7 +186,9 @@
         </div>
     </footer>
 
+    <script src="dot-grid.js"></script>
     <script src="scripts.js"></script>
+
 
     <!-- Structured Data for SEO -->
     <script type="application/ld+json">
@@ -225,6 +234,7 @@
       }
     }
     </script>
+
 </body>
 
 </html>

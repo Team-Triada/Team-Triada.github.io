@@ -126,6 +126,28 @@ function initScrollAnimations() {
     animatedElements.forEach(el => {
         observer.observe(el);
     });
+
+    // Join page specific animations
+    const joinPageAnimations = document.querySelectorAll('.animate-section-fade, .animate-card-float, .animate-text-slide-up, .animate-list-fade');
+    const joinObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0)';
+                joinObserver.unobserve(entry.target);
+            }
+        });
+    }, {
+        threshold: 0.1,
+        rootMargin: '0px 0px -30px 0px'
+    });
+
+    joinPageAnimations.forEach(el => {
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(20px)';
+        el.style.transition = 'opacity 0.8s ease-out, transform 0.8s ease-out';
+        joinObserver.observe(el);
+    });
 }
 
 // Form handling with modern UX
@@ -567,3 +589,4 @@ window.TRIADA = {
     }
 };
 console.log('%cTry: TRIADA.flag1(), TRIADA.flag2(), TRIADA.flag3()', 'color: #00ff00; font-family: monospace;');
+

@@ -3,6 +3,7 @@
 
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
 @import url('https://fonts.cdnfonts.com/css/technos');
 
 :root {
@@ -56,9 +57,39 @@
     --angle: 0deg;
 }
 
+#dot-grid-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    /* Explicit Layer 1 */
+    pointer-events: none;
+    opacity: 1;
+    /* Full opacity */
+}
+
+/* Ensure content sits above the grid */
+main,
+footer,
+.hero,
+.section {
+    position: relative;
+    z-index: 2;
+    /* Explicit Layer 2 */
+}
+
+.header {
+    position: fixed;
+    z-index: 1000;
+}
+
+
 /* ============================================================================
    RESET & BASE STYLES
    ============================================================================ */
+
 
 * {
     margin: 0;
@@ -79,6 +110,20 @@ body {
     color: var(--color-text-primary);
     background: var(--color-black);
     overflow-x: hidden;
+}
+
+/* Join page uses Poppins font */
+.join-hero,
+.join-hero~.section {
+    font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+.join-hero p,
+.join-hero~.section p,
+.join-hero~.section li,
+.join-hero~.section h2,
+.join-hero~.section h3 {
+    font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 }
 
 /* ============================================================================
@@ -330,20 +375,20 @@ main {
     align-items: center;
     justify-content: center;
     position: relative;
-    background: linear-gradient(135deg, var(--color-black) 0%, var(--color-black-accent) 100%);
+    background: transparent;
+    /* Changed from gradient to allow DotGrid to show */
     overflow: hidden;
     padding: var(--space-3xl) 0;
+
 }
 
 .hero::before {
     content: '';
     position: absolute;
     inset: 0;
-    background:
-        radial-gradient(circle at 20% 80%, rgba(255, 0, 51, 0.08) 0%, transparent 50%),
-        radial-gradient(circle at 80% 20%, rgba(255, 0, 51, 0.04) 0%, transparent 50%);
     pointer-events: none;
 }
+
 
 .hero-home {
     position: relative;
@@ -377,7 +422,7 @@ main {
 }
 
 .triada-logo {
-    max-width: 260px;
+    max-width: 450px;
     width: 100%;
     height: auto;
     filter: brightness(1) contrast(1.1);
@@ -386,6 +431,11 @@ main {
 
 .triada-logo:hover {
     transform: scale(1.05);
+}
+
+/* Join page specific logo size */
+.join-hero .triada-logo {
+    max-width: 500px;
 }
 
 .hero-heading {
@@ -436,9 +486,11 @@ main {
 
 .section {
     padding: var(--space-4xl) 0;
-    background: var(--color-black);
+    background: transparent;
+    /* Changed from black to allow DotGrid to show */
     animation: fadeIn 0.6s ease-out;
 }
+
 
 .section-header {
     margin-bottom: var(--space-3xl);
@@ -488,6 +540,19 @@ main {
     border-color: rgba(255, 0, 51, 0.3);
     transform: translateY(-8px);
     box-shadow: 0 12px 32px rgba(255, 0, 51, 0.15);
+}
+
+/* Enhanced hover effects for join page cards */
+.join-hero~.section .glass-card:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 16px 40px rgba(255, 0, 51, 0.25);
+    border-color: rgba(255, 0, 51, 0.5);
+}
+
+.join-hero~.section .glass-card:hover h3 {
+    color: var(--color-red-light);
+    transform: translateX(5px);
+    transition: all 0.3s ease;
 }
 
 /* ============================================================================
@@ -607,8 +672,9 @@ main {
 
 .team-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: var(--space-2xl);
+
     justify-items: center;
     max-width: 1280px;
     margin: 0 auto;
@@ -621,28 +687,56 @@ main {
     gap: var(--space-lg);
     text-align: center;
     width: 100%;
-    max-width: 340px;
+    /* max-width: 340px; removed to let grid control width */
     padding: var(--space-lg);
-    background: rgba(255, 255, 255, 0.02);
-    border: 1px solid rgba(255, 255, 255, 0.08);
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.05);
     border-radius: var(--radius-lg);
-    transition: all var(--transition-normal);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    backdrop-filter: blur(10px);
+    position: relative;
+    overflow: hidden;
+}
+
+.team-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 50% 0%, rgba(255, 0, 51, 0.1), transparent 70%);
+    opacity: 0;
+    transition: opacity 0.4s ease;
 }
 
 .team-card:hover {
-    background: rgba(255, 255, 255, 0.06);
-    border-color: rgba(255, 0, 51, 0.3);
-    transform: translateY(-8px);
-    box-shadow: 0 12px 32px rgba(255, 0, 51, 0.15);
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 0, 51, 0.4);
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 0 0 20px rgba(255, 0, 51, 0.1);
+}
+
+.team-card:hover::before {
+    opacity: 1;
+
 }
 
 .team-photo {
     width: 100%;
     max-width: 260px;
-    aspect-ratio: 3 / 4;
+    aspect-ratio: 1 / 1;
     object-fit: cover;
     object-position: center;
-    border-radius: var(--radius-md);
+    border-radius: 50%;
+    /* Circular images look more premium */
+    margin-bottom: var(--space-sm);
+    flex-shrink: 0;
+    border: 2px solid rgba(255, 0, 51, 0.1);
+    transition: transform 0.4s ease, border-color 0.3s ease;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.team-card:hover .team-photo {
+    transform: scale(1.05);
+    border-color: var(--color-red);
     margin-bottom: var(--space-sm);
     flex-shrink: 0;
 }
@@ -1042,6 +1136,10 @@ body.achievements-page .winners-grid {
         max-width: 250px;
     }
 
+    .join-hero .triada-logo {
+        max-width: 300px;
+    }
+
     .team-grid {
         grid-template-columns: repeat(2, 1fr) !important;
         gap: var(--space-xl);
@@ -1129,6 +1227,10 @@ body.achievements-page .winners-grid {
 
     .triada-logo {
         max-width: 200px;
+    }
+
+    .join-hero .triada-logo {
+        max-width: 250px;
     }
 
     .team-grid {
@@ -1228,6 +1330,10 @@ body.achievements-page .winners-grid {
         width: 100%;
         height: auto;
         filter: brightness(1.05) contrast(1.15);
+    }
+
+    .join-hero .triada-logo {
+        max-width: 220px;
     }
 
     .hero-heading {
@@ -1375,6 +1481,10 @@ body.achievements-page .winners-grid {
         width: 100%;
         height: auto;
         filter: brightness(1.05) contrast(1.15);
+    }
+
+    .join-hero .triada-logo {
+        max-width: 180px;
     }
 
     .hero-heading {
@@ -1650,6 +1760,7 @@ body.achievements-page .winners-grid {
 .gap-xl {
     gap: var(--space-xl);
 }
+
 /* 
  * ═══════════════════════════════════════════════════════════════
  * 🚩 CTF EASTER EGG - FLAG #3
@@ -1675,20 +1786,181 @@ body.achievements-page .winners-grid {
    JOIN PAGE MOBILE OPTIMIZATION
    ============================================================================ */
 
+/* Join Page Animations */
+.animate-text-slide {
+    animation: textSlideIn 0.8s ease-out;
+}
+
+.animate-text-fade {
+    animation: textFadeIn 1s ease-out;
+}
+
+.animate-text-fade-delay {
+    animation: textFadeIn 1s ease-out 0.3s backwards;
+}
+
+.animate-text-fade-delay-2 {
+    animation: textFadeIn 1s ease-out 0.6s backwards;
+}
+
+.animate-text-slide-up {
+    animation: textSlideUp 0.8s ease-out;
+}
+
+.animate-text-glow {
+    animation: textGlow 2s ease-in-out infinite;
+}
+
+.animate-section-fade {
+    animation: sectionFadeIn 1s ease-out;
+}
+
+.animate-card-float {
+    animation: cardFloat 0.8s ease-out backwards;
+}
+
+.animate-list-fade {
+    animation: listFadeIn 1s ease-out;
+}
+
+.animate-list-fade li {
+    animation: listItemFadeIn 0.6s ease-out backwards;
+}
+
+.animate-list-fade li:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.animate-list-fade li:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.animate-list-fade li:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+.animate-list-fade li:nth-child(4) {
+    animation-delay: 0.4s;
+}
+
+.animate-list-fade li:nth-child(5) {
+    animation-delay: 0.5s;
+}
+
+.animate-list-fade li:nth-child(6) {
+    animation-delay: 0.6s;
+}
+
+@keyframes textSlideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes textFadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes textSlideUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes textGlow {
+
+    0%,
+    100% {
+        text-shadow: 0 0 10px rgba(255, 0, 51, 0.3);
+    }
+
+    50% {
+        text-shadow: 0 0 20px rgba(255, 0, 51, 0.6), 0 0 30px rgba(255, 0, 51, 0.4);
+    }
+}
+
+@keyframes sectionFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes cardFloat {
+    from {
+        opacity: 0;
+        transform: translateY(30px) scale(0.95);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@keyframes listFadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes listItemFadeIn {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
 @media (max-width: 1023px) {
     .join-hero {
         min-height: 70vh;
         padding: var(--space-2xl) 0;
     }
-    
+
     .join-hero .hero-heading {
         font-size: 2rem;
     }
-    
+
     .join-hero .hero-intro {
         font-size: 0.95rem !important;
     }
-    
+
+    .join-hero .triada-logo {
+        max-width: 350px;
+    }
+
     .grid-2 {
         grid-template-columns: 1fr !important;
         gap: var(--space-lg) !important;
@@ -1700,38 +1972,39 @@ body.achievements-page .winners-grid {
         min-height: 60vh;
         padding: var(--space-xl) 0;
     }
-    
+
     .join-hero .hero-heading {
         font-size: 1.75rem;
     }
-    
+
     .join-hero .hero-intro {
         font-size: 0.9rem !important;
     }
-    
+
     .hero-cta {
         flex-direction: column;
         gap: var(--space-sm);
         width: 100%;
     }
-    
+
     .hero-cta .btn {
         width: 100%;
     }
-    
+
     .glass-card {
         padding: var(--space-lg);
     }
-    
+
     .glass-card h2 {
         font-size: 1.5rem;
     }
-    
+
     .glass-card h3 {
         font-size: 1.1rem;
     }
-    
-    .glass-card p, .glass-card li {
+
+    .glass-card p,
+    .glass-card li {
         font-size: 0.9rem;
     }
 }
@@ -1741,34 +2014,35 @@ body.achievements-page .winners-grid {
         min-height: auto;
         padding: var(--space-lg) 0;
     }
-    
+
     .join-hero .hero-heading {
         font-size: 1.5rem;
     }
-    
+
     .join-hero .hero-intro {
         font-size: 0.85rem !important;
     }
-    
+
     .glass-card {
         padding: var(--space-md);
     }
-    
+
     .glass-card h2 {
         font-size: 1.25rem;
         margin-bottom: var(--space-md);
     }
-    
+
     .glass-card h3 {
         font-size: 1rem;
         margin-bottom: var(--space-xs);
     }
-    
-    .glass-card p, .glass-card li {
+
+    .glass-card p,
+    .glass-card li {
         font-size: 0.85rem;
         line-height: 1.6;
     }
-    
+
     .glass-card ul {
         padding-left: var(--space-sm);
     }
@@ -1779,21 +2053,23 @@ body.achievements-page .winners-grid {
     form {
         padding: var(--space-lg);
     }
-    
-    input, textarea, select {
+
+    input,
+    textarea,
+    select {
         font-size: 16px !important;
         padding: var(--space-sm) var(--space-md) !important;
     }
-    
+
     .form-row {
         flex-direction: column;
         gap: var(--space-md);
     }
-    
+
     .form-group {
         width: 100%;
     }
-    
+
     button[type="submit"] {
         width: 100%;
         padding: var(--space-md);
@@ -1805,21 +2081,24 @@ body.achievements-page .winners-grid {
     form {
         padding: var(--space-md);
     }
-    
-    input, textarea, select {
+
+    input,
+    textarea,
+    select {
         font-size: 16px !important;
         padding: var(--space-sm) !important;
     }
-    
+
     label {
         font-size: 0.9rem;
     }
-    
+
     button[type="submit"] {
         padding: var(--space-sm) var(--space-md);
         font-size: 0.95rem;
     }
 }
+
 /* CLEAN MODAL FIXES - NO GRADIENT ANIMATION */
 
 /* Fix Header Height */
@@ -1862,6 +2141,7 @@ body.achievements-page .winners-grid {
     -ms-overflow-style: none !important;
     scrollbar-width: none !important;
 }
+
 /* ============================================================================
    TEAM MEMBER MODAL
    ============================================================================ */
@@ -2155,6 +2435,7 @@ body.achievements-page .winners-grid {
 .header-inner {
     height: 100% !important;
 }
+
 /* Specialists Grid - 3 columns desktop, 2 tablet, 1 mobile */
 .specialists-grid {
     display: grid;
@@ -2172,4 +2453,59 @@ body.achievements-page .winners-grid {
     .specialists-grid {
         grid-template-columns: 1fr;
     }
+}
+
+/* ============================================================================
+   MATRIX MODE
+   ============================================================================ */
+#matrix-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    pointer-events: none;
+    background-color: black;
+}
+
+body.matrix-mode #matrix-canvas {
+    opacity: 1;
+    z-index: 9998;
+    /* Just below the highest elements like modal/header */
+}
+
+/* Adjust header/modal z-index to stay above matrix */
+.header {
+    z-index: 10000 !important;
+}
+
+.modal {
+    z-index: 10001 !important;
+}
+
+/* Toggle Button */
+.matrix-toggle-btn {
+    background: transparent;
+    border: 1px solid rgba(255, 0, 51, 0.3);
+    color: var(--color-red);
+    width: 40px;
+    height: 40px;
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    font-size: 1.1rem;
+    margin-left: var(--space-md);
+}
+
+.matrix-toggle-btn:hover,
+body.matrix-mode .matrix-toggle-btn {
+    background: rgba(255, 0, 51, 0.1);
+    box-shadow: 0 0 15px rgba(255, 0, 51, 0.4);
+    transform: scale(1.05);
 }
