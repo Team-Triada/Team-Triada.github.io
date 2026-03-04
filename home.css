@@ -1,0 +1,49 @@
+/* HOME PAGE — Dot grid, social icons */
+
+#dot-grid-container {
+    position: fixed;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.social-links-home {
+    display: flex;
+    gap: var(--space-md);
+    margin: var(--space-md) 0;
+    flex-wrap: wrap;
+}
+
+.social-icon-home {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    background: rgba(255, 255, 255, .05);
+    border: 1.5px solid rgba(255, 255, 255, .15);
+    border-radius: var(--radius-lg);
+    color: var(--color-text-secondary);
+    transition: all var(--transition-normal);
+    font-size: 1.25rem;
+}
+
+.social-icon-home:hover {
+    background: rgba(255, 0, 51, .15);
+    color: var(--color-red);
+    transform: translateY(-2px);
+    border-color: var(--color-red);
+    box-shadow: 0 4px 12px rgba(255, 0, 51, .2);
+}
+
+.social-icon-home img {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+}
+
+@media (max-width: 767px) {
+    .social-links-home {
+        justify-content: center;
+    }
+}

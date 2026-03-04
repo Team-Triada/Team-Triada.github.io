@@ -6,7 +6,7 @@
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-XMQ0EW6G7W"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
+        function gtag() { dataLayer.push(arguments); }
         gtag('js', new Date());
 
         gtag('config', 'G-XMQ0EW6G7W');
@@ -67,14 +67,18 @@
 
 
     <!-- Styles -->
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="base.css">
+    <link rel="stylesheet" href="achievements.css">
 </head>
 
 <body class="achievements-page">
     <header class="header" id="header">
         <div class="header-inner">
-            <a href="index.html" class="footer-logo"><span class="triada-red">T</span><span
-                    class="triada-white">riada</span></a>
+            <a href="index.html" class="brand">
+                <img src="images/Triada_typo.png" alt="TRIADA" class="triada-header-logo">
+                <span class="nav-separator">|</span>
+                <img src="images/yenepoya_logo_n.png" alt="Yenepoya University" class="nav-univ-logo">
+            </a>
             <button class="hamburger" aria-label="Toggle navigation menu" aria-expanded="false">
                 <span></span>
                 <span></span>
@@ -97,7 +101,8 @@
                 <div class="section-header">
                     <div class="section-number">03</div>
                     <h2 class="section-title">Achievements</h2>
-                    <p class="section-subtitle">Milestones in Cybersecurity</p>
+                    <p class="section-subtitle">Milestones in Cybersecurity — Representing <span
+                            class="yenepoya-green">Yenepoya</span> University</p>
                 </div>
                 <div class="winners-grid">
                     <div class="winner-card">
@@ -146,7 +151,8 @@
                         <div class="winner-rank">Triada CTF '25</div>
                         <div class="winner-info">
                             <h3>University CTF Organization</h3>
-                            <p>Successfully organized and conducted a Capture The Flag (CTF) event at our university,
+                            <p>Successfully organized and conducted a Capture The Flag (CTF) event at <span
+                                    class="yenepoya-green">Yenepoya</span> (Deemed to be University),
                                 promoting cybersecurity awareness and skill-building within our community.</p>
                         </div>
                     </div>
@@ -179,6 +185,11 @@
                     <a href="https://ctftime.org/team/303057" class="social-icon-footer" target="_blank"><img
                             src="https://ctftime.org/favicon.png" alt="CTFtime" class="ctftime-logo"></a>
                 </div>
+            </div>
+            <div class="footer-university">
+                <img src="images/yenepoya_logo_n.png" alt="Yenepoya University" class="yenepoya-logo">
+                <span class="footer-university-text">An academic team of <span class="yenepoya-green">Yenepoya</span>
+                    (Deemed to be University)</span>
             </div>
             <div class="footer-copyright">
                 &copy;

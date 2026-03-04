@@ -87,7 +87,8 @@
 
 
     <!-- Styles -->
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="base.css">
+    <link rel="stylesheet" href="home.css">
 
     <!-- GSAP for Animations -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
@@ -99,8 +100,12 @@
     <header class="header" id="header">
 
         <div class="header-inner">
-            <a href="index.html" class="footer-logo"><span class="triada-red">T</span><span
-                    class="triada-white">riada</span></a>
+            <!-- brand link includes Triada text and Yenepoya university logo -->
+            <a href="index.html" class="brand">
+                <img src="images/Triada_typo.png" alt="TRIADA" class="triada-header-logo">
+                <span class="nav-separator">|</span>
+                <img src="images/yenepoya_logo_n.png" alt="Yenepoya University" class="nav-univ-logo">
+            </a>
             <button class="hamburger" aria-label="Toggle navigation menu" aria-expanded="false">
                 <span></span>
                 <span></span>
@@ -144,6 +149,11 @@
                             aria-label="CTFtime Profile"><img src="https://ctftime.org/favicon.png" alt="CTFtime"
                                 class="ctftime-logo"></a>
                     </div>
+                    <div class="university-badge">
+                        <img src="images/yenepoya_logo_n.png" alt="Yenepoya University" class="yenepoya-logo">
+                        <span class="university-badge-text">Academic CTF Team of <span
+                                class="yenepoya-green">Yenepoya</span> (Deemed to be University)</span>
+                    </div>
                     <div class="hero-cta">
                         <a href="team.html" class="btn btn-primary">Our Team</a>
                         <a href="achievements.html" class="btn btn-secondary">Achievements</a>
@@ -178,6 +188,11 @@
                         aria-label="CTFtime"><img src="https://ctftime.org/favicon.png" alt="CTFtime"
                             class="ctftime-logo"></a>
                 </div>
+            </div>
+            <div class="footer-university">
+                <img src="images/yenepoya_logo_n.png" alt="Yenepoya University" class="yenepoya-logo">
+                <span class="footer-university-text">An academic team of <span class="yenepoya-green">Yenepoya</span>
+                    (Deemed to be University)</span>
             </div>
             <div class="footer-copyright">
                 &copy;

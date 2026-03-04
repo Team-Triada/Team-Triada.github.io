@@ -179,6 +179,19 @@ p {
     margin-bottom: var(--space-md);
 }
 
+/* larger intro paragraphs in hero sections */
+.hero-intro {
+    font-size: 1.125rem;
+    line-height: 1.8;
+}
+
+/* small annotation text used on join page */
+.hero-note {
+    font-weight: 600;
+    color: var(--color-red);
+    font-size: 1.2rem;
+}
+
 a {
     color: var(--color-red);
     text-decoration: none;
@@ -257,14 +270,45 @@ main {
 .brand {
     display: flex;
     align-items: center;
-    gap: var(--space-md);
+    gap: var(--space-sm);
     text-decoration: none;
     transition: transform var(--transition-fast);
     font-family: 'Technos', sans-serif;
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     font-weight: 700;
     letter-spacing: 0.05em;
     color: var(--color-white);
+}
+
+.nav-separator {
+    color: var(--color-gray-light);
+    font-weight: 500;
+    margin: 0 var(--space-xs);
+}
+
+.nav-univ-logo {
+    height: 24px;
+    width: auto;
+    display: block;
+}
+
+.triada-header-logo {
+    height: 32px;
+    width: auto;
+    display: block;
+}
+
+@media (max-width: 600px) {
+    /* hide separator and univ logo on small phones to keep header compact */
+    .nav-separator,
+    .nav-univ-logo {
+        display: none;
+    }
+
+    /* scale down main logo slightly */
+    .triada-header-logo {
+        height: 28px;
+    }
 }
 
 .brand::first-letter {
@@ -395,12 +439,18 @@ main {
     z-index: 2;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: var(--space-4xl);
-    max-width: 1200px;
+    gap: var(--space-5xl);
+    /* allow wider heroes on large screens */
+    max-width: 1400px;
     width: 100%;
     padding: 0 var(--space-xl);
     align-items: center;
     justify-items: center;
+}
+
+.hero-content {
+    /* relax the old 600px cap so text can breathe */
+    max-width: 700px;
 }
 
 .hero-content {
@@ -2440,7 +2490,8 @@ body.achievements-page .winners-grid {
 .specialists-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: var(--space-xl);
+    gap: var(--space-2xl);
+    padding: var(--space-lg) 0; /* vertical breathing room */
 }
 
 @media (max-width: 1024px) {
@@ -2508,4 +2559,131 @@ body.matrix-mode .matrix-toggle-btn {
     background: rgba(255, 0, 51, 0.1);
     box-shadow: 0 0 15px rgba(255, 0, 51, 0.4);
     transform: scale(1.05);
+}
+
+/* ============================================================================
+   YENEPOYA UNIVERSITY BRANDING
+   ============================================================================ */
+
+.yenepoya-green {
+    color: #93D500 !important;
+    font-weight: 700;
+}
+
+/* University Affiliation Badge — used in hero sections */
+.university-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.625rem 1.25rem;
+    background: rgba(147, 213, 0, 0.06);
+    border: 1px solid rgba(147, 213, 0, 0.2);
+    border-radius: var(--radius-xl);
+    margin-top: var(--space-md);
+    animation: fadeInUp 0.8s ease-out 0.4s backwards;
+    transition: all var(--transition-normal);
+}
+
+.university-badge:hover {
+    background: rgba(147, 213, 0, 0.1);
+    border-color: rgba(147, 213, 0, 0.35);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(147, 213, 0, 0.1);
+}
+
+.university-badge .yenepoya-logo {
+    height: 28px;
+    width: auto;
+    flex-shrink: 0;
+}
+
+.university-badge-text {
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--color-text-secondary);
+    line-height: 1.4;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+/* Footer University Affiliation */
+.footer-university {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    padding: var(--space-sm) 0;
+    width: 100%;
+}
+
+.footer-university .yenepoya-logo {
+    height: 22px;
+    width: auto;
+    opacity: 0.85;
+    transition: opacity var(--transition-fast);
+}
+
+.footer-university:hover .yenepoya-logo {
+    opacity: 1;
+}
+
+.footer-university-text {
+    font-size: 0.78rem;
+    color: var(--color-gray);
+    font-weight: 400;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+.footer-university-text .yenepoya-green {
+    font-weight: 600;
+    font-size: 0.78rem;
+}
+
+/* Section subtitle Yenepoya accent */
+.section-subtitle .yenepoya-green {
+    font-weight: 700;
+}
+
+/* Responsive — Mobile */
+@media (max-width: 768px) {
+    .university-badge {
+        padding: 0.5rem 1rem;
+        gap: 0.5rem;
+        justify-content: center;
+    }
+
+    .university-badge .yenepoya-logo {
+        height: 22px;
+    }
+
+    .university-badge-text {
+        font-size: 0.78rem;
+    }
+
+    .footer-university {
+        flex-direction: row;
+        gap: 0.5rem;
+    }
+
+    .footer-university .yenepoya-logo {
+        height: 18px;
+    }
+
+    .footer-university-text {
+        font-size: 0.72rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .university-badge {
+        padding: 0.4rem 0.75rem;
+        gap: 0.4rem;
+    }
+
+    .university-badge .yenepoya-logo {
+        height: 18px;
+    }
+
+    .university-badge-text {
+        font-size: 0.72rem;
+    }
 }

@@ -6,7 +6,7 @@
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-XMQ0EW6G7W"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
+        function gtag() { dataLayer.push(arguments); }
         gtag('js', new Date());
 
         gtag('config', 'G-XMQ0EW6G7W');
@@ -58,7 +58,8 @@
     <link href="https://fonts.cdnfonts.com/css/technos" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"
         rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
 
     <!-- Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
@@ -68,14 +69,19 @@
 
 
     <!-- Styles -->
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="base.css">
+    <link rel="stylesheet" href="join.css">
 </head>
 
 <body>
     <header class="header" id="header">
         <div class="header-inner">
-            <a href="index.html" class="footer-logo"><span class="triada-red">T</span><span
-                    class="triada-white">riada</span></a>
+            <!-- matching branding with logo for navbar -->
+            <a href="index.html" class="brand">
+                <img src="images/Triada_typo.png" alt="TRIADA" class="triada-header-logo">
+                <span class="nav-separator">|</span>
+                <img src="images/yenepoya_logo_n.png" alt="Yenepoya University" class="nav-univ-logo">
+            </a>
             <button class="hamburger" aria-label="Toggle navigation menu" aria-expanded="false">
                 <span></span>
                 <span></span>
@@ -97,30 +103,37 @@
             <div class="hero-home">
                 <div class="hero-content">
                     <h1 class="hero-heading animate-text-slide">Join Triada</h1>
-                    <p class="hero-intro animate-text-fade" style="font-weight: 600; font-size: 1.2rem; color: var(--color-red);">
+                    <p class="hero-intro hero-note animate-text-fade">
                         Recruitment Opening Soon
                     </p>
-                    <p class="hero-intro animate-text-fade-delay" style="font-weight: 400; font-size: 1rem;">
+                    <p class="hero-intro animate-text-fade-delay">
                         We're looking for skilled, driven, and curious cybersecurity players who want to compete at the
                         highest levels and grow with a team that's consistently ranked among the best.
                     </p>
                     <div class="hero-cta animate-text-fade-delay-2">
                         <a href="#apply" class="btn btn-primary">Apply Now</a>
+                        <div class="university-badge">
+                            <img src="images/yenepoya_logo_n.png" alt="Yenepoya University" class="yenepoya-logo">
+                            <span class="university-badge-text">Academic CTF Team of <span
+                                    class="yenepoya-green">Yenepoya</span> (Deemed to be University)</span>
+                        </div>
+                    </div>
+                    <div class="hero-logo">
+                        <img src="images/Triada_logo.png" alt="TRIADA Logo" class="triada-logo">
                     </div>
                 </div>
-                <div class="hero-logo">
-                    <img src="images/Triada_logo.png" alt="TRIADA Logo" class="triada-logo">
-                </div>
-            </div>
         </section>
 
         <section class="section">
             <div class="container">
                 <!-- Centered Header -->
-                <div class="animate-section-fade" style="text-align: center; max-width: 800px; margin: 0 auto var(--space-3xl) auto;">
-                    <h2 class="animate-text-glow" style="color: var(--color-red); margin-bottom: var(--space-lg); font-weight: 800;">We Want
+                <div class="animate-section-fade"
+                    style="text-align: center; max-width: 800px; margin: 0 auto var(--space-3xl) auto;">
+                    <h2 class="animate-text-glow"
+                        style="color: var(--color-red); margin-bottom: var(--space-lg); font-weight: 800;">We Want
                         Specialists</h2>
-                    <p class="animate-text-fade" style="font-weight: 500; color: var(--color-text-secondary); font-size: 1.1rem;">
+                    <p class="animate-text-fade"
+                        style="font-weight: 500; color: var(--color-text-secondary); font-size: 1.1rem;">
                         If you're experienced in any one of these domains, you already stand out:
                     </p>
                 </div>
@@ -129,9 +142,11 @@
                 <div class="specialists-grid" style="gap: var(--space-xl);">
                     <!-- Web Exploitation -->
                     <div class="glass-card animate-card-float">
-                        <h3 class="animate-text-slide-up" style="color: var(--color-red); margin-bottom: var(--space-md); font-weight: 700;"><i
+                        <h3 class="animate-text-slide-up"
+                            style="color: var(--color-red); margin-bottom: var(--space-md); font-weight: 700;"><i
                                 class="" style="margin-right: var(--space-sm);"></i>Web Exploitation</h3>
-                        <p class="animate-text-fade" style="font-size: 0.9rem; font-weight: 400; color: var(--color-text-secondary);">
+                        <p class="animate-text-fade"
+                            style="font-size: 0.9rem; font-weight: 400; color: var(--color-text-secondary);">
                             Break logic. Bend inputs. Own the app.<br><em
                                 style="font-style: italic; font-weight: 500;">(SQLi,
                                 XSS, SSRF, IDOR,
@@ -140,9 +155,11 @@
 
                     <!-- Binary/Pwn -->
                     <div class="glass-card animate-card-float" style="animation-delay: 0.1s;">
-                        <h3 class="animate-text-slide-up" style="color: var(--color-red); margin-bottom: var(--space-md); font-weight: 700;"><i
+                        <h3 class="animate-text-slide-up"
+                            style="color: var(--color-red); margin-bottom: var(--space-md); font-weight: 700;"><i
                                 class="" style="margin-right: var(--space-sm);"></i>Binary/Pwn</h3>
-                        <p class="animate-text-fade" style="font-size: 0.9rem; font-weight: 400; color: var(--color-text-secondary);">
+                        <p class="animate-text-fade"
+                            style="font-size: 0.9rem; font-weight: 400; color: var(--color-text-secondary);">
                             Understand memory like a weapon.<br><em style="font-style: italic; font-weight: 500;">(ROP,
                                 heap,
                                 stack smashing,
@@ -151,10 +168,12 @@
 
                     <!-- Reverse Engineering -->
                     <div class="glass-card animate-card-float" style="animation-delay: 0.2s;">
-                        <h3 class="animate-text-slide-up" style="color: var(--color-red); margin-bottom: var(--space-md); font-weight: 700;"><i
+                        <h3 class="animate-text-slide-up"
+                            style="color: var(--color-red); margin-bottom: var(--space-md); font-weight: 700;"><i
                                 class="" style="margin-right: var(--space-sm);"></i>Reverse Engineering
                         </h3>
-                        <p class="animate-text-fade" style="font-size: 0.9rem; font-weight: 400; color: var(--color-text-secondary);">
+                        <p class="animate-text-fade"
+                            style="font-size: 0.9rem; font-weight: 400; color: var(--color-text-secondary);">
                             Peel binaries apart and rebuild their secrets.<br><em
                                 style="font-style: italic; font-weight: 500;">(Static
                                 analysis, dynamic tracing, crackmes, Android,
@@ -163,10 +182,12 @@
 
                     <!-- Forensics / Malware / DFIR -->
                     <div class="glass-card animate-card-float" style="animation-delay: 0.3s;">
-                        <h3 class="animate-text-slide-up" style="color: var(--color-red); margin-bottom: var(--space-md); font-weight: 700;"><i
+                        <h3 class="animate-text-slide-up"
+                            style="color: var(--color-red); margin-bottom: var(--space-md); font-weight: 700;"><i
                                 class="" style="margin-right: var(--space-sm);"></i>Forensics /
                             Malware / DFIR</h3>
-                        <p class="animate-text-fade" style="font-size: 0.9rem; font-weight: 400; color: var(--color-text-secondary);">
+                        <p class="animate-text-fade"
+                            style="font-size: 0.9rem; font-weight: 400; color: var(--color-text-secondary);">
                             Find the signal in the noise.<br><em style="font-style: italic; font-weight: 500;">(Packet
                                 forensics, malware
                                 triage, IR workflows)</em></p>
@@ -174,9 +195,11 @@
 
                     <!-- OSINT / Recon -->
                     <div class="glass-card animate-card-float" style="animation-delay: 0.4s;">
-                        <h3 class="animate-text-slide-up" style="color: var(--color-red); margin-bottom: var(--space-md); font-weight: 700;"><i
+                        <h3 class="animate-text-slide-up"
+                            style="color: var(--color-red); margin-bottom: var(--space-md); font-weight: 700;"><i
                                 class="" style="margin-right: var(--space-sm);"></i>OSINT / Recon</h3>
-                        <p class="animate-text-fade" style="font-size: 0.9rem; font-weight: 400; color: var(--color-text-secondary);">
+                        <p class="animate-text-fade"
+                            style="font-size: 0.9rem; font-weight: 400; color: var(--color-text-secondary);">
                             See everything. Miss nothing.<br><em
                                 style="font-style: italic; font-weight: 500;">(Open-source
                                 intelligence,
@@ -185,10 +208,12 @@
 
                     <!-- Hardware / IoT Security -->
                     <div class="glass-card animate-card-float" style="animation-delay: 0.5s;">
-                        <h3 class="animate-text-slide-up" style="color: var(--color-red); margin-bottom: var(--space-md); font-weight: 700;"><i
+                        <h3 class="animate-text-slide-up"
+                            style="color: var(--color-red); margin-bottom: var(--space-md); font-weight: 700;"><i
                                 class="" style="margin-right: var(--space-sm);"></i>Hardware / IoT
                             Security</h3>
-                        <p class="animate-text-fade" style="font-size: 0.9rem; font-weight: 400; color: var(--color-text-secondary);">Make
+                        <p class="animate-text-fade"
+                            style="font-size: 0.9rem; font-weight: 400; color: var(--color-text-secondary);">Make
                             devices talk — and tell the truth.<br><em
                                 style="font-style: italic; font-weight: 500;">(Firmware
                                 dumping, ESP32/MCU hacking, RF/802.11 analysis)</em></p>
@@ -202,10 +227,14 @@
             <div class="container">
                 <div class="grid grid-2" style="gap: var(--space-xl);">
                     <div class="glass-card animate-section-fade">
-                        <h2 class="animate-text-glow" style="color: var(--color-red); margin-bottom: var(--space-lg); font-weight: 800;">Why Join
+                        <h2 class="animate-text-glow"
+                            style="color: var(--color-red); margin-bottom: var(--space-lg); font-weight: 800;">Why Join
                             TRIADA?</h2>
                         <ul class="animate-list-fade" style="list-style: none; padding: 0; margin: 0;">
                             <li style="margin-bottom: var(--space-sm);">• Compete in national & international CTFs</li>
+                            <li style="margin-bottom: var(--space-sm);">• Represent <span
+                                    class="yenepoya-green">Yenepoya</span> University on national & international stages
+                            </li>
                             <li style="margin-bottom: var(--space-sm);">• Work on real-world security projects (Labs,
                                 tools, research)</li>
                             <li style="margin-bottom: var(--space-sm);">• Collaborate with top talent and experts</li>
@@ -217,7 +246,8 @@
                         </ul>
                     </div>
                     <div class="glass-card animate-section-fade" style="animation-delay: 0.2s;">
-                        <h2 class="animate-text-glow" style="color: var(--color-red); margin-bottom: var(--space-lg); font-weight: 800;">What We
+                        <h2 class="animate-text-glow"
+                            style="color: var(--color-red); margin-bottom: var(--space-lg); font-weight: 800;">What We
                             Expect</h2>
                         <ul class="animate-list-fade" style="list-style: none; padding: 0; margin: 0;">
                             <li style="margin-bottom: var(--space-sm);">✓ Consistent participation in CTFs</li>
@@ -240,10 +270,12 @@
                     <div
                         style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-2xl); align-items: start; margin-bottom: var(--space-xl);">
                         <div>
-                            <h3 class="animate-text-slide-up" style="color: var(--color-red); margin-bottom: var(--space-md); font-weight: 700;">How
+                            <h3 class="animate-text-slide-up"
+                                style="color: var(--color-red); margin-bottom: var(--space-md); font-weight: 700;">How
                                 Recruitment Works
                             </h3>
-                            <p class="animate-text-fade" style="margin-bottom: var(--space-md); font-weight: 500;">Recruitment details will be
+                            <p class="animate-text-fade" style="margin-bottom: var(--space-md); font-weight: 500;">
+                                Recruitment details will be
                                 announced
                                 soon.<br><span style="font-weight: 400;">Shortlisted applicants will go through:</span>
                             </p>
@@ -259,7 +291,8 @@
                             </ul>
                         </div>
                         <div>
-                            <h3 class="animate-text-slide-up" style="color: var(--color-red); margin-bottom: var(--space-md); font-weight: 700;">Stay
+                            <h3 class="animate-text-slide-up"
+                                style="color: var(--color-red); margin-bottom: var(--space-md); font-weight: 700;">Stay
                                 Alert</h3>
                             <ul class="animate-list-fade" style="list-style: none; padding: 0; margin: 0;">
                                 <li style="margin-bottom: var(--space-sm); font-weight: 500;">• Updates will be posted
@@ -307,6 +340,11 @@
                         aria-label="CTFtime Profile"><img src="https://ctftime.org/favicon.png" alt="CTFtime"
                             class="ctftime-logo"></a>
                 </div>
+            </div>
+            <div class="footer-university">
+                <img src="images/yenepoya_logo_n.png" alt="Yenepoya University" class="yenepoya-logo">
+                <span class="footer-university-text">An academic team of <span class="yenepoya-green">Yenepoya</span>
+                    (Deemed to be University)</span>
             </div>
             <div class="footer-copyright">
                 &copy;

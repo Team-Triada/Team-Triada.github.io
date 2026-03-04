@@ -6,7 +6,7 @@
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-XMQ0EW6G7W"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
+        function gtag() { dataLayer.push(arguments); }
         gtag('js', new Date());
 
         gtag('config', 'G-XMQ0EW6G7W');
@@ -38,7 +38,8 @@
 
 
     <!-- Styles -->
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="base.css">
+    <link rel="stylesheet" href="home.css">
     <link
         href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600;700&display=swap"
         rel="stylesheet">
@@ -49,7 +50,11 @@
         <!-- Navigation -->
         <header class="header" id="header">
             <div class="header-inner">
-                <a href="index.html" class="footer-logo">Triada</a>
+                <a href="index.html" class="brand">
+                    <img src="images/Triada_typo.png" alt="TRIADA" class="triada-header-logo">
+                    <span class="nav-separator">|</span>
+                    <img src="images/yenepoya_logo_n.png" alt="Yenepoya University" class="nav-univ-logo">
+                </a>
                 <button class="hamburger" aria-label="Toggle navigation menu" aria-expanded="false">
                     <span></span>
                     <span></span>
@@ -91,6 +96,11 @@
         <div class="footer-content">
             <div class="footer-left">
                 <div class="footer-logo">Triada</div>
+                <div class="footer-university">
+                    <img src="images/yenepoya_logo_n.png" alt="Yenepoya University" class="yenepoya-logo">
+                    <span class="footer-university-text">An academic team of <span
+                            class="yenepoya-green">Yenepoya</span> (Deemed to be University)</span>
+                </div>
                 <div class="footer-copyright">
                     &copy;
                     <script>document.write(new Date().getFullYear())</script> TRIADA. All rights reserved.

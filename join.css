@@ -1,0 +1,375 @@
+/* ============================================================================
+   JOIN PAGE STYLES — Compact & Optimized
+   ============================================================================ */
+
+/* Poppins font for join page */
+.join-hero,
+.join-hero~.section,
+.join-hero p,
+.join-hero~.section p,
+.join-hero~.section li,
+.join-hero~.section h2,
+.join-hero~.section h3 {
+    font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+/* --- Hero layout fix: on join page the logo sits INSIDE .hero-content,
+   so we make .hero-home single-col and turn .hero-content into a 2-col grid --- */
+.join-hero .hero-home {
+    grid-template-columns: 1fr;
+    max-width: 1300px;
+}
+
+.join-hero .hero-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-lg);
+    max-width: 100%;
+    align-items: flex-start;
+}
+
+/* Text items take the left column */
+.join-hero .hero-heading,
+.join-hero .hero-intro,
+.join-hero .hero-cta {
+    width: 55%;
+    flex-shrink: 0;
+}
+
+/* Logo takes the right side */
+.join-hero .hero-logo {
+    order: 0;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    margin: 0;
+    width: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.join-hero .hero-content {
+    position: relative;
+}
+
+.join-hero .triada-logo {
+    max-width: 500px;
+}
+
+/* Enhanced card hover for join */
+.join-hero~.section .glass-card:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 16px 40px rgba(255, 0, 51, 0.25);
+    border-color: rgba(255, 0, 51, 0.5);
+}
+
+.join-hero~.section .glass-card:hover h3 {
+    color: var(--color-red-light);
+    transform: translateX(5px);
+    transition: all 0.3s ease;
+}
+
+/* Specialists Grid */
+.specialists-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-2xl);
+    padding: var(--space-lg) 0;
+}
+
+/* --- Animations --- */
+.animate-text-slide {
+    animation: textSlideIn 0.8s ease-out;
+}
+
+.animate-text-fade {
+    animation: fadeIn 1s ease-out;
+}
+
+.animate-text-fade-delay {
+    animation: fadeIn 1s ease-out 0.3s backwards;
+}
+
+.animate-text-fade-delay-2 {
+    animation: fadeIn 1s ease-out 0.6s backwards;
+}
+
+.animate-text-slide-up {
+    animation: fadeInUp 0.8s ease-out;
+}
+
+.animate-text-glow {
+    animation: textGlow 2s ease-in-out infinite;
+}
+
+.animate-section-fade {
+    animation: fadeInUp 1s ease-out;
+}
+
+.animate-card-float {
+    animation: cardFloat 0.8s ease-out backwards;
+}
+
+.animate-list-fade {
+    animation: fadeIn 1s ease-out;
+}
+
+.animate-list-fade li {
+    animation: listItemFade 0.6s ease-out backwards;
+}
+
+.animate-list-fade li:nth-child(1) {
+    animation-delay: .1s;
+}
+
+.animate-list-fade li:nth-child(2) {
+    animation-delay: .2s;
+}
+
+.animate-list-fade li:nth-child(3) {
+    animation-delay: .3s;
+}
+
+.animate-list-fade li:nth-child(4) {
+    animation-delay: .4s;
+}
+
+.animate-list-fade li:nth-child(5) {
+    animation-delay: .5s;
+}
+
+.animate-list-fade li:nth-child(6) {
+    animation-delay: .6s;
+}
+
+@keyframes textSlideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes textGlow {
+
+    0%,
+    100% {
+        text-shadow: 0 0 10px rgba(255, 0, 51, .3);
+    }
+
+    50% {
+        text-shadow: 0 0 20px rgba(255, 0, 51, .6), 0 0 30px rgba(255, 0, 51, .4);
+    }
+}
+
+@keyframes cardFloat {
+    from {
+        opacity: 0;
+        transform: translateY(30px) scale(.95);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@keyframes listItemFade {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* --- Responsive --- */
+@media (max-width: 1023px) {
+
+    .join-hero .hero-heading,
+    .join-hero .hero-intro,
+    .join-hero .hero-cta {
+        width: 100%;
+    }
+
+    .join-hero .hero-logo {
+        position: static;
+        transform: none;
+        width: 100%;
+        order: -1;
+    }
+
+    .join-hero .triada-logo {
+        max-width: 300px;
+    }
+
+    .join-hero .hero-heading {
+        font-size: 2rem;
+    }
+
+    .join-hero .hero-intro {
+        font-size: .95rem !important;
+    }
+
+    .specialists-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .grid-2 {
+        grid-template-columns: 1fr !important;
+        gap: var(--space-lg) !important;
+    }
+}
+
+@media (max-width: 767px) {
+    .join-hero {
+        min-height: 60vh;
+        padding: var(--space-xl) 0;
+    }
+
+    .join-hero .hero-heading {
+        font-size: 1.75rem;
+    }
+
+    .join-hero .hero-intro {
+        font-size: .9rem !important;
+    }
+
+    .join-hero .triada-logo {
+        max-width: 220px;
+    }
+
+    .specialists-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-cta {
+        flex-direction: column;
+        gap: var(--space-sm);
+        width: 100%;
+    }
+
+    .hero-cta .btn {
+        width: 100%;
+    }
+
+    .glass-card {
+        padding: var(--space-lg);
+    }
+
+    .glass-card h2 {
+        font-size: 1.5rem;
+    }
+
+    .glass-card h3 {
+        font-size: 1.1rem;
+    }
+
+    .glass-card p,
+    .glass-card li {
+        font-size: .9rem;
+    }
+}
+
+@media (max-width: 479px) {
+    .join-hero {
+        min-height: auto;
+        padding: var(--space-lg) 0;
+    }
+
+    .join-hero .hero-heading {
+        font-size: 1.5rem;
+    }
+
+    .join-hero .hero-intro {
+        font-size: .85rem !important;
+    }
+
+    .join-hero .triada-logo {
+        max-width: 160px;
+    }
+
+    .glass-card {
+        padding: var(--space-md);
+    }
+
+    .glass-card h2 {
+        font-size: 1.25rem;
+        margin-bottom: var(--space-md);
+    }
+
+    .glass-card h3 {
+        font-size: 1rem;
+        margin-bottom: var(--space-xs);
+    }
+
+    .glass-card p,
+    .glass-card li {
+        font-size: .85rem;
+        line-height: 1.6;
+    }
+
+    .glass-card ul {
+        padding-left: var(--space-sm);
+    }
+}
+
+/* Form mobile */
+@media (max-width: 767px) {
+    form {
+        padding: var(--space-lg);
+    }
+
+    input,
+    textarea,
+    select {
+        font-size: 16px !important;
+        padding: var(--space-sm) var(--space-md) !important;
+    }
+
+    .form-row {
+        flex-direction: column;
+        gap: var(--space-md);
+    }
+
+    .form-group {
+        width: 100%;
+    }
+
+    button[type="submit"] {
+        width: 100%;
+        padding: var(--space-md);
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 479px) {
+    form {
+        padding: var(--space-md);
+    }
+
+    input,
+    textarea,
+    select {
+        font-size: 16px !important;
+        padding: var(--space-sm) !important;
+    }
+
+    label {
+        font-size: .9rem;
+    }
+
+    button[type="submit"] {
+        padding: var(--space-sm) var(--space-md);
+        font-size: .95rem;
+    }
+}

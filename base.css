@@ -1,0 +1,1032 @@
+/* TRIADA BASE — Shared styles across all pages
+   Red · Black · White — High-end cybersecurity aesthetic */
+
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.cdnfonts.com/css/technos');
+
+/* ── Variables ─────────────────────────────────────────────── */
+:root {
+    --color-red: #ff0033;
+    --color-red-dark: #cc0026;
+    --color-red-light: #ff3366;
+    --color-black: #000;
+    --color-black-soft: #0a0a0a;
+    --color-white: #fff;
+    --color-gray: #8a8a8a;
+    --color-gray-light: #d4d4d4;
+    --color-text-primary: #fff;
+    --color-text-secondary: #b3b3b3;
+    --space-xs: .25rem;
+    --space-sm: .5rem;
+    --space-md: 1rem;
+    --space-lg: 1.5rem;
+    --space-xl: 2rem;
+    --space-2xl: 3rem;
+    --space-3xl: 4rem;
+    --space-4xl: 5rem;
+    --radius-sm: .375rem;
+    --radius-md: .75rem;
+    --radius-lg: 1rem;
+    --radius-xl: 1.5rem;
+    --shadow-sm: 0 1px 2px rgba(0, 0, 0, .3);
+    --shadow-md: 0 4px 12px rgba(0, 0, 0, .4);
+    --shadow-lg: 0 8px 24px rgba(0, 0, 0, .5);
+    --transition-fast: .15s ease;
+    --transition-normal: .3s ease;
+    --angle: 0deg;
+}
+
+/* ── Reset ─────────────────────────────────────────────────── */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--color-text-primary);
+    background: var(--color-black);
+    overflow-x: hidden;
+}
+
+/* ── Typography ────────────────────────────────────────────── */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: 700;
+    line-height: 1.2;
+    color: var(--color-white);
+}
+
+h1 {
+    font-size: clamp(2.5rem, 5vw, 3.5rem);
+    font-weight: 800;
+    letter-spacing: -.01em;
+    margin-bottom: var(--space-lg);
+    background: linear-gradient(135deg, var(--color-white) 0%, var(--color-red) 50%, var(--color-red-light) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    background-size: 200% 200%;
+    animation: gradientShift 3s ease infinite;
+}
+
+h2 {
+    font-size: clamp(1.75rem, 4vw, 2.5rem);
+    margin-bottom: var(--space-lg);
+}
+
+h3 {
+    font-size: clamp(1.25rem, 2.5vw, 1.5rem);
+    margin-bottom: var(--space-md);
+}
+
+h4 {
+    font-size: 1.125rem;
+    font-weight: 600;
+    margin-bottom: var(--space-md);
+}
+
+p {
+    line-height: 1.7;
+    color: var(--color-text-secondary);
+    margin-bottom: var(--space-md);
+}
+
+a {
+    color: var(--color-red);
+    text-decoration: none;
+    transition: color var(--transition-fast);
+}
+
+a:hover {
+    color: var(--color-red-light);
+}
+
+.hero-note {
+    font-weight: 600;
+    color: var(--color-red);
+    font-size: 1.2rem;
+}
+
+/* ── Layout ────────────────────────────────────────────────── */
+.site-wrap {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+.container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 var(--space-xl);
+    width: 100%;
+}
+
+main {
+    padding-top: 80px;
+    position: relative;
+    z-index: 2;
+}
+
+main,
+footer,
+.hero,
+.section {
+    position: relative;
+    z-index: 2;
+}
+
+/* ── Header & Nav ──────────────────────────────────────────── */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 10000;
+    height: 80px;
+    background: rgba(0, 0, 0, .7);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 255, 255, .08);
+    padding: var(--space-md) 0;
+    transition: all var(--transition-normal);
+}
+
+.header.scrolled {
+    background: rgba(0, 0, 0, .9);
+    border-bottom-color: rgba(255, 255, 255, .12);
+    box-shadow: var(--shadow-md);
+}
+
+.header-inner {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 var(--space-xl);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    text-decoration: none;
+    font-family: 'Technos', sans-serif;
+    font-size: 1.4rem;
+    font-weight: 700;
+    letter-spacing: .05em;
+    color: var(--color-white);
+    transition: transform var(--transition-fast);
+}
+
+.brand::first-letter {
+    color: var(--color-red);
+}
+
+.triada-header-logo {
+    height: 20px;
+    width: auto;
+    display: block;
+}
+
+.nav-univ-logo {
+    height: 35px;
+    width: auto;
+    display: block;
+}
+
+.nav-separator {
+    color: var(--color-gray-light);
+    font-weight: 500;
+    margin: 0 var(--space-xs);
+}
+
+.main-nav {
+    display: flex;
+    align-items: center;
+    gap: var(--space-xl);
+    list-style: none;
+}
+
+.nav-link {
+    color: var(--color-text-secondary);
+    font-size: .95rem;
+    font-weight: 500;
+    padding: var(--space-sm) var(--space-md);
+    border-radius: var(--radius-md);
+    transition: all var(--transition-fast);
+    position: relative;
+}
+
+.nav-link:hover {
+    color: var(--color-white);
+    background: rgba(255, 255, 255, .05);
+}
+
+.nav-link.is-active {
+    color: var(--color-red);
+    background: rgba(255, 0, 51, .1);
+}
+
+/* Hamburger */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 24px;
+    height: 24px;
+    background: 0;
+    border: 0;
+    cursor: pointer;
+    padding: 0;
+    z-index: 1001;
+}
+
+.hamburger span {
+    width: 22px;
+    height: 2px;
+    background: var(--color-white);
+    border-radius: 999px;
+    transition: all .3s ease;
+    transform-origin: center;
+}
+
+.hamburger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(6px, 6px);
+}
+
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(6px, -6px);
+}
+
+/* Footer logo (text-based) */
+.footer-logo {
+    font-family: 'Technos', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: .05em;
+    color: var(--color-white);
+    display: flex;
+    align-items: center;
+    transition: transform var(--transition-fast);
+}
+
+.footer-logo:hover {
+    transform: scale(1.02);
+}
+
+.triada-red {
+    color: #ff0033;
+    font-weight: 700;
+    font-size: 1.6rem;
+    letter-spacing: .12em;
+    font-family: 'Technos', sans-serif;
+}
+
+.triada-white {
+    color: #f8f8fa;
+    font-weight: 700;
+    font-size: 1.5rem;
+    letter-spacing: .1em;
+    font-family: 'Technos', sans-serif;
+}
+
+/* ── Hero ──────────────────────────────────────────────────── */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    padding: var(--space-3xl) 0;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+}
+
+.hero-home {
+    position: relative;
+    z-index: 2;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-4xl);
+    max-width: 1400px;
+    width: 100%;
+    padding: 0 var(--space-xl);
+    align-items: center;
+    justify-items: center;
+}
+
+.hero-content {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+    order: 1;
+    width: 100%;
+    max-width: 650px;
+    justify-self: start;
+}
+
+.hero-logo {
+    order: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: var(--space-2xl);
+}
+
+.triada-logo {
+    max-width: 450px;
+    width: 100%;
+    height: auto;
+    filter: brightness(1) contrast(1.1);
+    transition: transform var(--transition-normal);
+}
+
+.triada-logo:hover {
+    transform: scale(1.05);
+}
+
+.hero-heading {
+    font-size: clamp(2.25rem, 4vw, 3rem);
+    font-weight: 800;
+    line-height: 1.1;
+    letter-spacing: -.02em;
+    margin-bottom: var(--space-md);
+    max-width: 16ch;
+}
+
+.hero-intro {
+    font-size: 1.125rem;
+    font-weight: 400;
+    color: var(--color-text-secondary);
+    line-height: 1.8;
+    max-width: 100%;
+    animation: fadeInUp .8s ease-out .2s backwards;
+}
+
+.hero-cta {
+    display: flex;
+    gap: var(--space-md);
+    justify-content: flex-start;
+    margin-top: var(--space-sm);
+}
+
+.section-title {
+    font-size: clamp(1.75rem, 4vw, 2.5rem);
+    font-weight: 800;
+    margin-bottom: var(--space-lg);
+    text-align: center !important;
+    background: linear-gradient(135deg, var(--color-white) 0%, var(--color-red) 50%, var(--color-red-light) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    background-size: 200% 200%;
+    animation: gradientShift 3s ease infinite;
+}
+
+/* ── Sections ──────────────────────────────────────────────── */
+.section {
+    padding: var(--space-4xl) 0;
+    animation: fadeIn .6s ease-out;
+}
+
+.section-header {
+    margin-bottom: var(--space-3xl);
+    text-align: center;
+    animation: fadeInUp .6s ease-out;
+}
+
+.section-number {
+    display: block;
+    font-size: .75rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: .15em;
+    color: var(--color-gray);
+    margin-bottom: var(--space-md);
+}
+
+.section-subtitle {
+    font-size: 1.1rem;
+    color: var(--color-red);
+    line-height: 1.7;
+    max-width: 48rem;
+    margin: 0 auto var(--space-2xl);
+}
+
+/* ── Cards & Glass ─────────────────────────────────────────── */
+.glass-card {
+    background: rgba(255, 255, 255, .02);
+    border: 1px solid rgba(255, 255, 255, .08);
+    border-radius: var(--radius-lg);
+    padding: var(--space-xl);
+    transition: all var(--transition-normal);
+    backdrop-filter: blur(10px);
+    animation: fadeInUp .6s ease-out;
+}
+
+.glass-card:hover {
+    background: rgba(255, 255, 255, .06);
+    border-color: rgba(255, 0, 51, .3);
+    transform: translateY(-8px);
+    box-shadow: 0 12px 32px rgba(255, 0, 51, .15);
+}
+
+/* Grids */
+.grid {
+    display: grid;
+    gap: var(--space-xl);
+}
+
+.grid-2 {
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+}
+
+.grid-3 {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+.grid-4 {
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+/* ── Buttons ───────────────────────────────────────────────── */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--space-md) var(--space-xl);
+    font-size: .95rem;
+    font-weight: 600;
+    border-radius: var(--radius-md);
+    border: 0;
+    cursor: pointer;
+    transition: all var(--transition-normal);
+    text-decoration: none;
+    gap: var(--space-sm);
+    position: relative;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, .2);
+    transition: left var(--transition-normal);
+    z-index: -1;
+}
+
+.btn:hover::before {
+    left: 100%;
+}
+
+.btn-primary {
+    background: var(--color-red);
+    color: var(--color-white);
+    box-shadow: 0 4px 15px rgba(255, 0, 51, .2);
+}
+
+.btn-primary:hover {
+    background: var(--color-red-dark);
+    transform: translateY(-3px);
+    box-shadow: 0 12px 30px rgba(255, 0, 51, .4);
+}
+
+.btn-secondary {
+    background: transparent;
+    color: var(--color-white);
+    border: 2px solid rgba(255, 255, 255, .3);
+}
+
+.btn-secondary:hover {
+    background: rgba(255, 0, 51, .1);
+    border-color: var(--color-red);
+    color: var(--color-red);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(255, 0, 51, .2);
+}
+
+/* ── Footer ────────────────────────────────────────────────── */
+.footer {
+    background: #050505;
+    border-top: 1px solid rgba(255, 255, 255, .06);
+    padding: var(--space-lg) 0 var(--space-sm);
+    margin-top: var(--space-3xl);
+}
+
+.footer-content {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 var(--space-xl);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-md);
+}
+
+.footer-top {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-xl);
+    width: 100%;
+    flex-wrap: wrap;
+}
+
+.footer-left {
+    display: flex;
+    align-items: center;
+}
+
+.footer-copyright {
+    font-size: .8rem;
+    color: var(--color-gray);
+    text-align: center;
+    width: 100%;
+    padding-top: var(--space-md);
+    border-top: 1px solid rgba(255, 255, 255, .04);
+}
+
+.footer-links {
+    display: flex;
+    gap: var(--space-md);
+    justify-content: center;
+}
+
+.footer-links a {
+    color: var(--color-text-secondary);
+    font-size: .9rem;
+    transition: color var(--transition-fast);
+}
+
+.footer-links a:hover {
+    color: var(--color-red);
+}
+
+.social-links-footer {
+    display: flex;
+    gap: var(--space-sm);
+    justify-content: center;
+}
+
+.social-icon-footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 34px;
+    height: 34px;
+    background: rgba(255, 255, 255, .04);
+    border-radius: var(--radius-md);
+    color: var(--color-text-secondary);
+    transition: all var(--transition-fast);
+    font-size: 1.1rem;
+}
+
+.social-icon-footer:hover {
+    background: rgba(255, 0, 51, .1);
+    color: var(--color-red);
+    transform: translateY(-2px);
+}
+
+.social-icon-footer .ctftime-logo {
+    width: 18px;
+    height: 18px;
+    object-fit: contain;
+}
+
+/* ── Animations ────────────────────────────────────────────── */
+@keyframes gradientShift {
+
+    0%,
+    100% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes scaleIn {
+    from {
+        opacity: 0;
+        transform: scale(.95);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes borderRotate {
+    0% {
+        --angle: 0deg;
+    }
+
+    100% {
+        --angle: 360deg;
+    }
+}
+
+@property --angle {
+    syntax: '<angle>';
+    initial-value: 0deg;
+    inherits: false;
+}
+
+.animate-fade-in {
+    animation: fadeIn .6s ease-out;
+}
+
+.animate-fade-in-up {
+    animation: fadeInUp .6s ease-out;
+}
+
+.animate-scale-in {
+    animation: scaleIn .6s ease-out;
+}
+
+/* ── Yenepoya Branding ─────────────────────────────────────── */
+.yenepoya-green {
+    color: #93D500 !important;
+    font-weight: 700;
+}
+
+.university-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: .75rem;
+    padding: .625rem 1.25rem;
+    background: rgba(147, 213, 0, .06);
+    border: 1px solid rgba(147, 213, 0, .2);
+    border-radius: var(--radius-xl);
+    margin-top: var(--space-md);
+    animation: fadeInUp .8s ease-out .4s backwards;
+    transition: all var(--transition-normal);
+}
+
+.university-badge:hover {
+    background: rgba(147, 213, 0, .1);
+    border-color: rgba(147, 213, 0, .35);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(147, 213, 0, .1);
+}
+
+.university-badge .yenepoya-logo {
+    height: 28px;
+    width: auto;
+    flex-shrink: 0;
+}
+
+.university-badge-text {
+    font-size: .85rem;
+    font-weight: 500;
+    color: var(--color-text-secondary);
+    line-height: 1.4;
+}
+
+.footer-university {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: .75rem;
+    padding: var(--space-sm) 0;
+    width: 100%;
+}
+
+.footer-university .yenepoya-logo {
+    height: 22px;
+    width: auto;
+    opacity: .85;
+    transition: opacity var(--transition-fast);
+}
+
+.footer-university:hover .yenepoya-logo {
+    opacity: 1;
+}
+
+.footer-university-text {
+    font-size: .78rem;
+    color: var(--color-gray);
+}
+
+.footer-university-text .yenepoya-green {
+    font-weight: 600;
+    font-size: .78rem;
+}
+
+.section-subtitle .yenepoya-green {
+    font-weight: 700;
+}
+
+/* ── Matrix Mode ───────────────────────────────────────────── */
+#matrix-canvas {
+    position: fixed;
+    inset: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+    opacity: 0;
+    transition: opacity .5s ease;
+    pointer-events: none;
+    background: #000;
+}
+
+body.matrix-mode #matrix-canvas {
+    opacity: 1;
+    z-index: 9998;
+}
+
+.modal {
+    z-index: 10001 !important;
+}
+
+.matrix-toggle-btn {
+    background: 0;
+    border: 1px solid rgba(255, 0, 51, .3);
+    color: var(--color-red);
+    width: 40px;
+    height: 40px;
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all .3s ease;
+    font-size: 1.1rem;
+    margin-left: var(--space-md);
+}
+
+.matrix-toggle-btn:hover,
+body.matrix-mode .matrix-toggle-btn {
+    background: rgba(255, 0, 51, .1);
+    box-shadow: 0 0 15px rgba(255, 0, 51, .4);
+    transform: scale(1.05);
+}
+
+/* Utilities */
+.text-center {
+    text-align: center;
+}
+
+.text-left {
+    text-align: left;
+}
+
+.mb-0 {
+    margin-bottom: 0;
+}
+
+.mt-2xl {
+    margin-top: var(--space-2xl);
+}
+
+.gap-xl {
+    gap: var(--space-xl);
+}
+
+/* 
+ * ═══════════════════════════════════════════════════════════════
+ * 🚩 CTF EASTER EGG - FLAG #3
+ * FLAG #3: TRIADA{CSS_n1nj4s_h1d3_1n_st4l3s}
+ * → https://triada.in/join.html
+ * ═══════════════════════════════════════════════════════════════
+ */
+
+/* ── Responsive ────────────────────────────────────────────── */
+
+/* Large desktop (>1400) */
+@media (min-width: 1400px) {
+    .container { max-width: 1360px; }
+    .hero-home { max-width: 1500px; gap: var(--space-4xl); }
+}
+
+/* Tablet (≤1023) */
+@media (max-width: 1023px) {
+    .hero { min-height: 85vh; padding: var(--space-2xl) 0; }
+    .hero-home { grid-template-columns: 1fr; gap: var(--space-2xl); padding: 0 var(--space-lg); }
+    .hero-content { order: 2; text-align: center; max-width: 100%; align-items: center; }
+    .hero-logo { order: 1; margin-bottom: var(--space-lg); }
+    .triada-logo { max-width: 250px; }
+    .hero-heading { max-width: 100%; }
+    .hero-cta { justify-content: center; }
+    .section { padding: var(--space-3xl) 0; }
+    .footer-top { flex-direction: column; gap: var(--space-md); }
+    .footer-content { text-align: center; }
+    .grid-2 { grid-template-columns: 1fr; }
+}
+
+/* Mobile (≤767) — hamburger nav, stacked layout */
+@media (max-width: 767px) {
+    /* Header & Nav */
+    .header { height: 64px; padding: var(--space-sm) 0; }
+    .header-inner { padding: 0 var(--space-md); }
+    .hamburger { display: flex; }
+    .main-nav {
+        display: flex; position: fixed; top: 56px;
+        right: var(--space-md); left: var(--space-md);
+        background: rgba(10,10,10,.98); border-radius: var(--radius-lg);
+        border: 1px solid rgba(255,255,255,.08); flex-direction: column;
+        gap: var(--space-xs); transform: translateY(-16px); opacity: 0;
+        pointer-events: none; transition: opacity .2s ease, transform .2s ease;
+        z-index: 1000; padding: var(--space-sm) var(--space-md);
+    }
+    .main-nav.active { transform: translateY(0); opacity: 1; pointer-events: auto; }
+    .nav-link {
+        font-size: .95rem; padding: var(--space-sm) var(--space-md);
+        border-radius: var(--radius-md); text-align: left;
+        min-height: 44px; display: flex; align-items: center;
+    }
+    .triada-header-logo { height: 18px; }
+    .nav-univ-logo { height: 28px; }
+
+    /* Layout */
+    main { padding-top: 64px; }
+    .container { padding: 0 var(--space-md); }
+
+    /* Hero */
+    .hero { min-height: auto; padding: var(--space-xl) 0; }
+    .hero-home { gap: var(--space-xl); padding: 0 var(--space-md); }
+    .hero-heading { font-size: 1.85rem; }
+    .hero-intro { font-size: 1rem; }
+    .triada-logo { max-width: 180px; }
+    .hero-cta { flex-direction: column; gap: var(--space-sm); align-items: center; }
+    .hero-cta .btn { width: 100%; max-width: 280px; }
+
+    /* Sections */
+    .section { padding: var(--space-2xl) 0; }
+    .section-header { margin-bottom: var(--space-xl); }
+
+    /* Cards */
+    .glass-card { padding: var(--space-lg); }
+    .glass-card:hover { transform: translateY(-4px); }
+
+    /* Grids */
+    .grid-2, .grid-3 { grid-template-columns: 1fr; }
+    .grid-4 { grid-template-columns: repeat(2, 1fr); }
+
+    /* Footer */
+    .footer { margin-top: var(--space-2xl); }
+    .footer-content { padding: 0 var(--space-md); }
+    .footer-links { flex-wrap: wrap; gap: var(--space-sm); }
+    .footer-links a { font-size: .85rem; }
+    .social-links-footer { gap: var(--space-md); }
+    .social-icon-footer { width: 40px; height: 40px; }
+    .footer-university { gap: .5rem; }
+    .footer-university .yenepoya-logo { height: 18px; }
+    .footer-university-text { font-size: .72rem; }
+
+    /* Branding */
+    .university-badge { padding: .5rem 1rem; gap: .5rem; justify-content: center; }
+    .university-badge .yenepoya-logo { height: 22px; }
+    .university-badge-text { font-size: .78rem; }
+}
+
+/* Small mobile (≤479) */
+@media (max-width: 479px) {
+    /* Header */
+    .header { height: 56px; }
+    .main-nav { top: 48px; }
+    .nav-separator, .nav-univ-logo { display: none; }
+    .triada-header-logo { height: 16px; }
+
+    /* Layout */
+    main { padding-top: 56px; }
+    .container { padding: 0 var(--space-sm); }
+
+    /* Hero */
+    .hero { padding: var(--space-lg) 0; }
+    .hero-home { gap: var(--space-md); padding: 0 var(--space-sm); }
+    .hero-content {
+        padding: var(--space-md); border-radius: var(--radius-lg);
+        background: rgba(10,10,10,.96); border: 1px solid rgba(255,255,255,.08);
+        text-align: center; align-items: center;
+    }
+    .triada-logo { max-width: 140px; }
+    .hero-heading { font-size: 1.5rem; margin-bottom: var(--space-sm); }
+    .hero-intro { font-size: .85rem; line-height: 1.6; }
+    .hero-cta { gap: var(--space-xs); margin-top: var(--space-sm); }
+    .btn { min-width: 140px; padding: var(--space-sm) var(--space-md); font-size: .85rem; }
+
+    /* Typography */
+    h1 { font-size: 1.5rem; } h2 { font-size: 1.2rem; } h3 { font-size: 1rem; }
+    p { font-size: .9rem; }
+
+    /* Sections */
+    .section { padding: var(--space-lg) 0; }
+    .section-header { margin-bottom: var(--space-md); }
+
+    /* Cards */
+    .glass-card { padding: var(--space-md); }
+    .glass-card h2 { font-size: 1.15rem; }
+    .glass-card h3 { font-size: .95rem; }
+    .glass-card p, .glass-card li { font-size: .85rem; line-height: 1.6; }
+    .glass-card ul { padding-left: var(--space-sm); }
+
+    /* Grids */
+    .grid-4 { grid-template-columns: 1fr; }
+
+    /* Footer */
+    .footer { padding: var(--space-md) 0 var(--space-sm); margin-top: var(--space-xl); }
+    .footer-links { flex-direction: column; gap: var(--space-xs); align-items: center; }
+    .footer-links a { font-size: .8rem; min-height: 36px; display: flex; align-items: center; }
+
+    /* Branding */
+    .university-badge { padding: .4rem .75rem; gap: .4rem; flex-wrap: wrap; justify-content: center; }
+    .university-badge .yenepoya-logo { height: 18px; }
+    .university-badge-text { font-size: .7rem; }
+    .footer-university-text { font-size: .65rem; }
+    .footer-logo { font-size: 1.2rem; }
+    .triada-red { font-size: 1.3rem; } .triada-white { font-size: 1.2rem; }
+}
+
+/* Tiny screens (≤359) */
+@media (max-width: 359px) {
+    .header { height: 50px; }
+    .main-nav { top: 42px; }
+    main { padding-top: 50px; }
+    .hero-heading { font-size: 1.3rem; }
+    .hero-intro { font-size: .8rem; }
+    .triada-logo { max-width: 120px; }
+    .btn { font-size: .8rem; padding: var(--space-xs) var(--space-sm); min-width: 120px; }
+    .section-title { font-size: 1.1rem; }
+    h1 { font-size: 1.3rem; } h2 { font-size: 1.1rem; } h3 { font-size: .95rem; }
+}
+
+/* Touch devices */
+@media (hover: none) and (pointer: coarse) {
+    .btn:hover, .social-link:hover, .social-icon-footer:hover,
+    .nav-link:hover, .glass-card:hover, .team-card:hover { transform: none; box-shadow: none; }
+    .btn:active, .social-link:active, .social-icon-footer:active,
+    .nav-link:active { transform: scale(.98); transition: transform .1s ease; }
+    .glass-card:active, .team-card:active { transform: scale(.99); transition: transform .1s ease; }
+}
+
+/* HiDPI */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    .hero::before {
+        background: radial-gradient(circle at 20% 80%, rgba(255,0,51,.12) 0%, transparent 50%),
+                    radial-gradient(circle at 80% 20%, rgba(255,0,51,.06) 0%, transparent 50%);
+    }
+    .triada-logo { image-rendering: -webkit-optimize-contrast; image-rendering: crisp-edges; }
+}
+
+/* Print */
+@media print {
+    .header, .footer, .hero-cta { display: none !important; }
+    .section { page-break-inside: avoid; }
+    .glass-card, .team-card { background: #fff; border: 1px solid #ccc; box-shadow: none; break-inside: avoid; }
+}
