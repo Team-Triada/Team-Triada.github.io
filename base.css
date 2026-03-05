@@ -205,7 +205,7 @@ footer,
 }
 
 .nav-univ-logo {
-    height: 35px;
+    height: 50px;
     width: auto;
     display: block;
 }
@@ -726,7 +726,7 @@ footer,
 }
 
 .university-badge .yenepoya-logo {
-    height: 28px;
+    height: 44px;
     width: auto;
     flex-shrink: 0;
 }
@@ -748,7 +748,7 @@ footer,
 }
 
 .footer-university .yenepoya-logo {
-    height: 22px;
+    height: 36px;
     width: auto;
     opacity: .85;
     transition: opacity var(--transition-fast);
@@ -850,183 +850,549 @@ body.matrix-mode .matrix-toggle-btn {
 
 /* Large desktop (>1400) */
 @media (min-width: 1400px) {
-    .container { max-width: 1360px; }
-    .hero-home { max-width: 1500px; gap: var(--space-4xl); }
+    .container {
+        max-width: 1360px;
+    }
+
+    .hero-home {
+        max-width: 1500px;
+        gap: var(--space-4xl);
+    }
 }
 
 /* Tablet (≤1023) */
 @media (max-width: 1023px) {
-    .hero { min-height: 85vh; padding: var(--space-2xl) 0; }
-    .hero-home { grid-template-columns: 1fr; gap: var(--space-2xl); padding: 0 var(--space-lg); }
-    .hero-content { order: 2; text-align: center; max-width: 100%; align-items: center; }
-    .hero-logo { order: 1; margin-bottom: var(--space-lg); }
-    .triada-logo { max-width: 250px; }
-    .hero-heading { max-width: 100%; }
-    .hero-cta { justify-content: center; }
-    .section { padding: var(--space-3xl) 0; }
-    .footer-top { flex-direction: column; gap: var(--space-md); }
-    .footer-content { text-align: center; }
-    .grid-2 { grid-template-columns: 1fr; }
+    .hero {
+        min-height: 85vh;
+        padding: var(--space-2xl) 0;
+    }
+
+    .hero-home {
+        grid-template-columns: 1fr;
+        gap: var(--space-2xl);
+        padding: 0 var(--space-lg);
+    }
+
+    .hero-content {
+        order: 2;
+        text-align: center;
+        max-width: 100%;
+        align-items: center;
+    }
+
+    .hero-logo {
+        order: 1;
+        margin-bottom: var(--space-lg);
+    }
+
+    .triada-logo {
+        max-width: 250px;
+    }
+
+    .hero-heading {
+        max-width: 100%;
+    }
+
+    .hero-cta {
+        justify-content: center;
+    }
+
+    .section {
+        padding: var(--space-3xl) 0;
+    }
+
+    .footer-top {
+        flex-direction: column;
+        gap: var(--space-md);
+    }
+
+    .footer-content {
+        text-align: center;
+    }
+
+    .grid-2 {
+        grid-template-columns: 1fr;
+    }
 }
 
 /* Mobile (≤767) — hamburger nav, stacked layout */
 @media (max-width: 767px) {
+
     /* Header & Nav */
-    .header { height: 64px; padding: var(--space-sm) 0; }
-    .header-inner { padding: 0 var(--space-md); }
-    .hamburger { display: flex; }
+    .header {
+        height: 64px;
+        padding: var(--space-sm) 0;
+    }
+
+    .header-inner {
+        padding: 0 var(--space-md);
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
     .main-nav {
-        display: flex; position: fixed; top: 56px;
-        right: var(--space-md); left: var(--space-md);
-        background: rgba(10,10,10,.98); border-radius: var(--radius-lg);
-        border: 1px solid rgba(255,255,255,.08); flex-direction: column;
-        gap: var(--space-xs); transform: translateY(-16px); opacity: 0;
-        pointer-events: none; transition: opacity .2s ease, transform .2s ease;
-        z-index: 1000; padding: var(--space-sm) var(--space-md);
+        display: flex;
+        position: fixed;
+        top: 56px;
+        right: var(--space-md);
+        left: var(--space-md);
+        background: rgba(10, 10, 10, .98);
+        border-radius: var(--radius-lg);
+        border: 1px solid rgba(255, 255, 255, .08);
+        flex-direction: column;
+        gap: var(--space-xs);
+        transform: translateY(-16px);
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity .2s ease, transform .2s ease;
+        z-index: 1000;
+        padding: var(--space-sm) var(--space-md);
     }
-    .main-nav.active { transform: translateY(0); opacity: 1; pointer-events: auto; }
+
+    .main-nav.active {
+        transform: translateY(0);
+        opacity: 1;
+        pointer-events: auto;
+    }
+
     .nav-link {
-        font-size: .95rem; padding: var(--space-sm) var(--space-md);
-        border-radius: var(--radius-md); text-align: left;
-        min-height: 44px; display: flex; align-items: center;
+        font-size: .95rem;
+        padding: var(--space-sm) var(--space-md);
+        border-radius: var(--radius-md);
+        text-align: left;
+        min-height: 44px;
+        display: flex;
+        align-items: center;
     }
-    .triada-header-logo { height: 18px; }
-    .nav-univ-logo { height: 28px; }
+
+    .triada-header-logo {
+        height: 18px;
+    }
+
+    .nav-univ-logo {
+        height: 42px;
+    }
 
     /* Layout */
-    main { padding-top: 64px; }
-    .container { padding: 0 var(--space-md); }
+    main {
+        padding-top: 64px;
+    }
+
+    .container {
+        padding: 0 var(--space-md);
+    }
 
     /* Hero */
-    .hero { min-height: auto; padding: var(--space-xl) 0; }
-    .hero-home { gap: var(--space-xl); padding: 0 var(--space-md); }
-    .hero-heading { font-size: 1.85rem; }
-    .hero-intro { font-size: 1rem; }
-    .triada-logo { max-width: 180px; }
-    .hero-cta { flex-direction: column; gap: var(--space-sm); align-items: center; }
-    .hero-cta .btn { width: 100%; max-width: 280px; }
+    .hero {
+        min-height: auto;
+        padding: var(--space-xl) 0;
+    }
+
+    .hero-home {
+        gap: var(--space-xl);
+        padding: 0 var(--space-md);
+    }
+
+    .hero-heading {
+        font-size: 1.85rem;
+    }
+
+    .hero-intro {
+        font-size: 1rem;
+    }
+
+    .triada-logo {
+        max-width: 180px;
+    }
+
+    .hero-cta {
+        flex-direction: column;
+        gap: var(--space-sm);
+        align-items: center;
+    }
+
+    .hero-cta .btn {
+        width: 100%;
+        max-width: 280px;
+    }
 
     /* Sections */
-    .section { padding: var(--space-2xl) 0; }
-    .section-header { margin-bottom: var(--space-xl); }
+    .section {
+        padding: var(--space-2xl) 0;
+    }
+
+    .section-header {
+        margin-bottom: var(--space-xl);
+    }
 
     /* Cards */
-    .glass-card { padding: var(--space-lg); }
-    .glass-card:hover { transform: translateY(-4px); }
+    .glass-card {
+        padding: var(--space-lg);
+    }
+
+    .glass-card:hover {
+        transform: translateY(-4px);
+    }
 
     /* Grids */
-    .grid-2, .grid-3 { grid-template-columns: 1fr; }
-    .grid-4 { grid-template-columns: repeat(2, 1fr); }
+    .grid-2,
+    .grid-3 {
+        grid-template-columns: 1fr;
+    }
+
+    .grid-4 {
+        grid-template-columns: repeat(2, 1fr);
+    }
 
     /* Footer */
-    .footer { margin-top: var(--space-2xl); }
-    .footer-content { padding: 0 var(--space-md); }
-    .footer-links { flex-wrap: wrap; gap: var(--space-sm); }
-    .footer-links a { font-size: .85rem; }
-    .social-links-footer { gap: var(--space-md); }
-    .social-icon-footer { width: 40px; height: 40px; }
-    .footer-university { gap: .5rem; }
-    .footer-university .yenepoya-logo { height: 18px; }
-    .footer-university-text { font-size: .72rem; }
+    .footer {
+        margin-top: var(--space-2xl);
+    }
+
+    .footer-content {
+        padding: 0 var(--space-md);
+    }
+
+    .footer-links {
+        flex-wrap: wrap;
+        gap: var(--space-sm);
+    }
+
+    .footer-links a {
+        font-size: .85rem;
+    }
+
+    .social-links-footer {
+        gap: var(--space-md);
+    }
+
+    .social-icon-footer {
+        width: 40px;
+        height: 40px;
+    }
+
+    .footer-university {
+        gap: .5rem;
+    }
+
+    .footer-university .yenepoya-logo {
+        height: 30px;
+    }
+
+    .footer-university-text {
+        font-size: .72rem;
+    }
 
     /* Branding */
-    .university-badge { padding: .5rem 1rem; gap: .5rem; justify-content: center; }
-    .university-badge .yenepoya-logo { height: 22px; }
-    .university-badge-text { font-size: .78rem; }
+    .university-badge {
+        padding: .5rem 1rem;
+        gap: .5rem;
+        justify-content: center;
+    }
+
+    .university-badge .yenepoya-logo {
+        height: 36px;
+    }
+
+    .university-badge-text {
+        font-size: .78rem;
+    }
 }
 
 /* Small mobile (≤479) */
 @media (max-width: 479px) {
+
     /* Header */
-    .header { height: 56px; }
-    .main-nav { top: 48px; }
-    .nav-separator, .nav-univ-logo { display: none; }
-    .triada-header-logo { height: 16px; }
+    .header {
+        height: 56px;
+    }
+
+    .main-nav {
+        top: 48px;
+    }
+
+    .nav-separator {
+        display: none;
+    }
+
+    .nav-univ-logo {
+        height: 34px;
+    }
+
+    .triada-header-logo {
+        height: 16px;
+    }
 
     /* Layout */
-    main { padding-top: 56px; }
-    .container { padding: 0 var(--space-sm); }
+    main {
+        padding-top: 56px;
+    }
+
+    .container {
+        padding: 0 var(--space-sm);
+    }
 
     /* Hero */
-    .hero { padding: var(--space-lg) 0; }
-    .hero-home { gap: var(--space-md); padding: 0 var(--space-sm); }
-    .hero-content {
-        padding: var(--space-md); border-radius: var(--radius-lg);
-        background: rgba(10,10,10,.96); border: 1px solid rgba(255,255,255,.08);
-        text-align: center; align-items: center;
+    .hero {
+        padding: var(--space-lg) 0;
     }
-    .triada-logo { max-width: 140px; }
-    .hero-heading { font-size: 1.5rem; margin-bottom: var(--space-sm); }
-    .hero-intro { font-size: .85rem; line-height: 1.6; }
-    .hero-cta { gap: var(--space-xs); margin-top: var(--space-sm); }
-    .btn { min-width: 140px; padding: var(--space-sm) var(--space-md); font-size: .85rem; }
+
+    .hero-home {
+        gap: var(--space-md);
+        padding: 0 var(--space-sm);
+    }
+
+    .hero-content {
+        padding: var(--space-md);
+        border-radius: var(--radius-lg);
+        background: rgba(10, 10, 10, .96);
+        border: 1px solid rgba(255, 255, 255, .08);
+        text-align: center;
+        align-items: center;
+    }
+
+    .triada-logo {
+        max-width: 140px;
+    }
+
+    .hero-heading {
+        font-size: 1.5rem;
+        margin-bottom: var(--space-sm);
+    }
+
+    .hero-intro {
+        font-size: .85rem;
+        line-height: 1.6;
+    }
+
+    .hero-cta {
+        gap: var(--space-xs);
+        margin-top: var(--space-sm);
+    }
+
+    .btn {
+        min-width: 140px;
+        padding: var(--space-sm) var(--space-md);
+        font-size: .85rem;
+    }
 
     /* Typography */
-    h1 { font-size: 1.5rem; } h2 { font-size: 1.2rem; } h3 { font-size: 1rem; }
-    p { font-size: .9rem; }
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    h2 {
+        font-size: 1.2rem;
+    }
+
+    h3 {
+        font-size: 1rem;
+    }
+
+    p {
+        font-size: .9rem;
+    }
 
     /* Sections */
-    .section { padding: var(--space-lg) 0; }
-    .section-header { margin-bottom: var(--space-md); }
+    .section {
+        padding: var(--space-lg) 0;
+    }
+
+    .section-header {
+        margin-bottom: var(--space-md);
+    }
 
     /* Cards */
-    .glass-card { padding: var(--space-md); }
-    .glass-card h2 { font-size: 1.15rem; }
-    .glass-card h3 { font-size: .95rem; }
-    .glass-card p, .glass-card li { font-size: .85rem; line-height: 1.6; }
-    .glass-card ul { padding-left: var(--space-sm); }
+    .glass-card {
+        padding: var(--space-md);
+    }
+
+    .glass-card h2 {
+        font-size: 1.15rem;
+    }
+
+    .glass-card h3 {
+        font-size: .95rem;
+    }
+
+    .glass-card p,
+    .glass-card li {
+        font-size: .85rem;
+        line-height: 1.6;
+    }
+
+    .glass-card ul {
+        padding-left: var(--space-sm);
+    }
 
     /* Grids */
-    .grid-4 { grid-template-columns: 1fr; }
+    .grid-4 {
+        grid-template-columns: 1fr;
+    }
 
     /* Footer */
-    .footer { padding: var(--space-md) 0 var(--space-sm); margin-top: var(--space-xl); }
-    .footer-links { flex-direction: column; gap: var(--space-xs); align-items: center; }
-    .footer-links a { font-size: .8rem; min-height: 36px; display: flex; align-items: center; }
+    .footer {
+        padding: var(--space-md) 0 var(--space-sm);
+        margin-top: var(--space-xl);
+    }
+
+    .footer-links {
+        flex-direction: column;
+        gap: var(--space-xs);
+        align-items: center;
+    }
+
+    .footer-links a {
+        font-size: .8rem;
+        min-height: 36px;
+        display: flex;
+        align-items: center;
+    }
 
     /* Branding */
-    .university-badge { padding: .4rem .75rem; gap: .4rem; flex-wrap: wrap; justify-content: center; }
-    .university-badge .yenepoya-logo { height: 18px; }
-    .university-badge-text { font-size: .7rem; }
-    .footer-university-text { font-size: .65rem; }
-    .footer-logo { font-size: 1.2rem; }
-    .triada-red { font-size: 1.3rem; } .triada-white { font-size: 1.2rem; }
+    .university-badge {
+        padding: .4rem .75rem;
+        gap: .4rem;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .university-badge .yenepoya-logo {
+        height: 30px;
+    }
+
+    .university-badge-text {
+        font-size: .7rem;
+    }
+
+    .footer-university-text {
+        font-size: .65rem;
+    }
+
+    .footer-logo {
+        font-size: 1.2rem;
+    }
+
+    .triada-red {
+        font-size: 1.3rem;
+    }
+
+    .triada-white {
+        font-size: 1.2rem;
+    }
 }
 
 /* Tiny screens (≤359) */
 @media (max-width: 359px) {
-    .header { height: 50px; }
-    .main-nav { top: 42px; }
-    main { padding-top: 50px; }
-    .hero-heading { font-size: 1.3rem; }
-    .hero-intro { font-size: .8rem; }
-    .triada-logo { max-width: 120px; }
-    .btn { font-size: .8rem; padding: var(--space-xs) var(--space-sm); min-width: 120px; }
-    .section-title { font-size: 1.1rem; }
-    h1 { font-size: 1.3rem; } h2 { font-size: 1.1rem; } h3 { font-size: .95rem; }
+    .header {
+        height: 50px;
+    }
+
+    .main-nav {
+        top: 42px;
+    }
+
+    main {
+        padding-top: 50px;
+    }
+
+    .hero-heading {
+        font-size: 1.3rem;
+    }
+
+    .hero-intro {
+        font-size: .8rem;
+    }
+
+    .triada-logo {
+        max-width: 120px;
+    }
+
+    .btn {
+        font-size: .8rem;
+        padding: var(--space-xs) var(--space-sm);
+        min-width: 120px;
+    }
+
+    .section-title {
+        font-size: 1.1rem;
+    }
+
+    h1 {
+        font-size: 1.3rem;
+    }
+
+    h2 {
+        font-size: 1.1rem;
+    }
+
+    h3 {
+        font-size: .95rem;
+    }
 }
 
 /* Touch devices */
 @media (hover: none) and (pointer: coarse) {
-    .btn:hover, .social-link:hover, .social-icon-footer:hover,
-    .nav-link:hover, .glass-card:hover, .team-card:hover { transform: none; box-shadow: none; }
-    .btn:active, .social-link:active, .social-icon-footer:active,
-    .nav-link:active { transform: scale(.98); transition: transform .1s ease; }
-    .glass-card:active, .team-card:active { transform: scale(.99); transition: transform .1s ease; }
+
+    .btn:hover,
+    .social-link:hover,
+    .social-icon-footer:hover,
+    .nav-link:hover,
+    .glass-card:hover,
+    .team-card:hover {
+        transform: none;
+        box-shadow: none;
+    }
+
+    .btn:active,
+    .social-link:active,
+    .social-icon-footer:active,
+    .nav-link:active {
+        transform: scale(.98);
+        transition: transform .1s ease;
+    }
+
+    .glass-card:active,
+    .team-card:active {
+        transform: scale(.99);
+        transition: transform .1s ease;
+    }
 }
 
 /* HiDPI */
-@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+@media (-webkit-min-device-pixel-ratio: 2),
+(min-resolution: 192dpi) {
     .hero::before {
-        background: radial-gradient(circle at 20% 80%, rgba(255,0,51,.12) 0%, transparent 50%),
-                    radial-gradient(circle at 80% 20%, rgba(255,0,51,.06) 0%, transparent 50%);
+        background: radial-gradient(circle at 20% 80%, rgba(255, 0, 51, .12) 0%, transparent 50%),
+            radial-gradient(circle at 80% 20%, rgba(255, 0, 51, .06) 0%, transparent 50%);
     }
-    .triada-logo { image-rendering: -webkit-optimize-contrast; image-rendering: crisp-edges; }
+
+    .triada-logo {
+        image-rendering: -webkit-optimize-contrast;
+        image-rendering: crisp-edges;
+    }
 }
 
 /* Print */
 @media print {
-    .header, .footer, .hero-cta { display: none !important; }
-    .section { page-break-inside: avoid; }
-    .glass-card, .team-card { background: #fff; border: 1px solid #ccc; box-shadow: none; break-inside: avoid; }
+
+    .header,
+    .footer,
+    .hero-cta {
+        display: none !important;
+    }
+
+    .section {
+        page-break-inside: avoid;
+    }
+
+    .glass-card,
+    .team-card {
+        background: #fff;
+        border: 1px solid #ccc;
+        box-shadow: none;
+        break-inside: avoid;
+    }
 }

@@ -287,7 +287,7 @@ main {
 }
 
 .nav-univ-logo {
-    height: 24px;
+    height: 50px;
     width: auto;
     display: block;
 }
@@ -299,10 +299,12 @@ main {
 }
 
 @media (max-width: 600px) {
-    /* hide separator and univ logo on small phones to keep header compact */
-    .nav-separator,
-    .nav-univ-logo {
+    .nav-separator {
         display: none;
+    }
+
+    .nav-univ-logo {
+        height: 34px;
     }
 
     /* scale down main logo slightly */
@@ -2491,7 +2493,8 @@ body.achievements-page .winners-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: var(--space-2xl);
-    padding: var(--space-lg) 0; /* vertical breathing room */
+    padding: var(--space-lg) 0;
+    /* vertical breathing room */
 }
 
 @media (max-width: 1024px) {
@@ -2592,7 +2595,7 @@ body.matrix-mode .matrix-toggle-btn {
 }
 
 .university-badge .yenepoya-logo {
-    height: 28px;
+    height: 44px;
     width: auto;
     flex-shrink: 0;
 }
@@ -2616,7 +2619,7 @@ body.matrix-mode .matrix-toggle-btn {
 }
 
 .footer-university .yenepoya-logo {
-    height: 22px;
+    height: 36px;
     width: auto;
     opacity: 0.85;
     transition: opacity var(--transition-fast);
@@ -2652,7 +2655,7 @@ body.matrix-mode .matrix-toggle-btn {
     }
 
     .university-badge .yenepoya-logo {
-        height: 22px;
+        height: 36px;
     }
 
     .university-badge-text {
@@ -2665,7 +2668,7 @@ body.matrix-mode .matrix-toggle-btn {
     }
 
     .footer-university .yenepoya-logo {
-        height: 18px;
+        height: 30px;
     }
 
     .footer-university-text {
@@ -2680,7 +2683,7 @@ body.matrix-mode .matrix-toggle-btn {
     }
 
     .university-badge .yenepoya-logo {
-        height: 18px;
+        height: 30px;
     }
 
     .university-badge-text {
